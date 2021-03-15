@@ -1,0 +1,68 @@
+﻿/*regularStyles01.css  
+    for general transaction pages
+    See: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+    - see: https://www.w3schools.com/cssref/css_selectors.asp
+    - see: https://www.w3schools.com/Css/css_margin.asp
+	
+*/
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid purple;
+    background-color: rgb(100,100,100);
+    max-height: 700px;
+}
+.regContainer {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(50px,100px));
+    grid-template-rows: repeat(8, minmax(80px,));
+    grid-gap: 10px;
+    background-color: rgb(220, 190, 190);
+}
+
+header,
+footer {
+    display: flex;
+    grid-column: 1/13;
+    border-radius: 5px;
+    background-color: rgb(245, 215, 215);
+    border: 2px solid rgb(79,185,227);
+    font-size: 24px;
+    font-weight:600;
+    color: red;
+    align-items: center;
+}
+footer {
+    grid-row: 8/9;
+    justify-content: space-around;
+}
+
+header {
+    grid-row: 1/2;
+    justify-content: space-between;
+}
+
+
+    header footer, div {
+       
+        padding:10px;
+    }
+
+
+body {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2em auto;
+    border: 2px solid purple;
+    font: .9em/1.2 Arial, Helvetica, sans-serif;
+    background-color: rgb(214,188,188);
+}
+
+img {
+    display: block;
+    width: 85px;
+    height: 80px;
+}
+
+

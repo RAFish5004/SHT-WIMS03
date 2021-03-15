@@ -1,0 +1,43 @@
+﻿<!-- Regular layout as a general case -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/regularStyles01.css">
+    <script defer src="~/js/openingScripts04.js"></script>
+    <title> @ViewData["Title"] </title>
+</head>
+
+<!--  ------------------ start Body --------------      -->
+<body >
+    <header>
+        <img src="~/images/InvenIcon.png">
+        <div>
+            @ViewData["pageTitle"]
+        </div>
+        <img src="~/images/ARCLogo01.jpg">
+    </header>
+
+
+<div>
+    @RenderBody();
+</div>
+
+
+<footer>
+    <p>
+        Regular Page Footer
+    </p> 
+    <div>
+        <span style="color:black; font-size:20px;">
+            Contact: russell.fisher@redcross.org
+        </span>
+    </div>
+</footer>
+</body> 
+<!--   --------------- eo Body -------------------   -->
+
+</html>
