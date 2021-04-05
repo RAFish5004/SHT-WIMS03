@@ -1,0 +1,22 @@
+﻿@*
+    a scrollable List of Catalog items using scrollIntoView method
+*@
+
+@model IEnumerable<CatalogItem>
+
+@{ 
+
+    ViewData["pageTitle"] = "Catalog Item Scroll List";
+}
+
+
+<div id="scrollList" style="height:400px; width:700px; overflow:auto; background-color:lavenderblush; padding-left:2rem">
+    <div id="content">
+        @foreach (var cat in Model)
+        {
+            <span>
+                <dfn>@cat.ItemId</dfn> @cat.Description<br />
+            </span>
+        }
+    </div>
+</div>

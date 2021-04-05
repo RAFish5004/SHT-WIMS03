@@ -9,13 +9,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace SHTWIMS02.Models
 {
     public class Cart // --------------------------------------------------------------------------
     {
         private List<CartLine> lineCollection = new List<CartLine>();
 
-        public virtual void AddLine(CartLine inCartItem) // p 257 ---------------------------------
+        public virtual void AddLine(CartLine inCartItem) // p 257 ----------------------
         {
             CartLine line = lineCollection
                 .Where(ci => ci.ItemId == inCartItem.ItemId)
@@ -32,7 +33,7 @@ namespace SHTWIMS02.Models
 
         } // eo AddItem virtual method ------------------------------------------------------------
 
-        public virtual void RemoveLine(CartLine cartItem) // --------------------------------------
+        public virtual void RemoveLine(CartLine cartItem) // ------------------------------------
         {
             // called by CartController
             lineCollection.RemoveAll(l => l.ItemId == cartItem.ItemId);

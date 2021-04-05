@@ -18,10 +18,10 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SHTWIMS02.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS02.Areas.Pull.Models
 {
     public class PullItem : CountBase
     {

@@ -1,0 +1,27 @@
+﻿@*
+    CiListFilter.cshtml uses a <select> tag to allow user to choose an item by description
+       then showing the item code as output
+*@
+
+@model List<CatalogItem>
+
+@{ 
+
+    ViewData["pageTitle"] = "Filtered CiScrollList";
+}
+
+<body>
+    
+    <a asp-action="Home/Inded">Back to Index</a>
+
+    <div style="height:400px; overflow:auto; background-color:mistyrose; padding-left:2rem">
+  
+            @foreach (var itm in Model)
+            {
+                <p id=ciListItem> @itm.ItemId - @itm.Description </p> 
+            }    
+    </div>
+    <p></p>
+
+</body>
+

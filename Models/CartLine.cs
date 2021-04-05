@@ -1,4 +1,10 @@
-﻿using System;
+﻿// ========================================================
+// CartLine.cs, 210331
+// Author: Russell Fisher
+// Recast CartLine type for general purpose
+// ========================================================
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.Extensions.DependencyInjection; // reqd for GetService method
 using SHTWIMS02.Models;
+using SHTWIMS02.Areas.Pull.Models;
 
 namespace SHTWIMS02.Models
 {
@@ -16,7 +23,6 @@ namespace SHTWIMS02.Models
     {
         //private readonly ICatalogItemRepository ciRepository; // add Description term back to incoming PullItem
         private static IServiceProvider sp;
-
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CartLineId { get; set; }
@@ -37,7 +43,7 @@ namespace SHTWIMS02.Models
         //private string description;
         //private DateTime dateNeeded = DateTime.Today;
 
-         public virtual PullHdr PullHdr { get; set; }
+        //public virtual PullHdr PullHdr { get; set; }
 
         public CartLine() // ----------------------------------------------------------------------
         {

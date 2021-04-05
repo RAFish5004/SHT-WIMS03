@@ -1,0 +1,72 @@
+<!--
+ Pull Menu Screen
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Pull Menu page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js">  </script>
+<style>
+   a{
+      text-decoration: none;
+     }
+fieldset{
+       border: none;
+      }
+
+legend{
+      border: 2px dotted red;
+     }
+
+</style>
+
+  </head>
+
+  <body>
+<!-- Pull Menu as unordered list -->
+<form>
+<fieldset>
+   <legend>What do you want to do?</legend>
+
+      <ul   style="list-style-type:none">
+	
+         <li>
+	<p>
+	<a  target="_blank"  href="#">Open a Pull Order</a>
+	</p>
+         </li>
+
+         <li>
+	<p>
+	  <a href="#">Show List of Pull Orders</a>
+	</p>
+         <li>
+	<p>
+	<label for="regPull"  id="regPull"> Pull from inventory</label>
+	<input type="submit" id="regPull" name="regPull" > 
+	</p>
+         </li>
+
+         <li>
+	<p>
+	<label for="showPull"  id="showPull"> Show contents of Pull order</label>
+	<input type="button" id="shewPull" name="showPull" >     
+	</p>
+         </li>
+	
+
+         </li>
+
+      </ul>
+</fieldset>
+
+</form>  
+
+</body>
+</html>

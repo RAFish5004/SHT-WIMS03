@@ -1,0 +1,17 @@
+﻿@*
+   
+*@
+@{
+    ViewData["pageTitle"] = "Search String";
+}
+
+<!-- make an input box and send filter string to ICListFilter action method in CartController -->
+<form asp-action="CiFilteredScrollList">
+    <div>
+        <p>
+            Find by name: <input id="searchString" type="text" name="searchString" />
+            <input type="submit" value="Search" class="btn btn-info" />
+
+        </p>
+    </div>
+</form>

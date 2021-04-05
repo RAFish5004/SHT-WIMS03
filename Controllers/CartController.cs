@@ -11,9 +11,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SHTWIMS02.Models;
 using SHTWIMS02.Models.ViewModels;
-//using SHTWIMS02.Components;
+using SHTWIMS02.Components;
 
-namespace SHTWIMS02.Controllers
+namespace Areas.SHTWIMS02.Controllers
 {
     public class CartController : Controller // ---------------------------------------------------
     {

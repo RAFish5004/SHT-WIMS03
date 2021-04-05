@@ -6,6 +6,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet"
+          asp-href-include="/lib/bootstrap/dist/**/*.min.css"
+          asp-href-exclude="**/*-reboot*" />
+    <link rel="stylesheet" asp-href-include="/lib/font-awesome/css/*.css" />
     <link rel="stylesheet" href="~/css/regularStyles01.css">
     <script defer src="~/js/openingScripts04.js"></script>
     <title> @ViewData["Title"] </title>
@@ -30,6 +35,7 @@
 <footer>
     <p>
         Regular Page Footer
+        @ViewData["pageFooter"]
     </p> 
     <div>
         <span style="color:black; font-size:20px;">

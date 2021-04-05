@@ -1,3 +1,11 @@
+// ========================================================
+// SHTWIMS02.sln, 210309
+// Author: Russell Fisher
+// 
+// ========================================================
+
+// path: C:\OneDriveLocal\OneDrive\ASPMVC\ARCWeb\SHT-WIMS02
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +19,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using SHTWIMS02.Models;
+using SHTWIMS02.Areas.Pull.Models;
+using SHTWIMS02.Areas.Receive.Models;
+using SHTWIMS02.Areas.Count.Models;
+using SHTWIMS02.Areas.Locate.Models;
+
 
 namespace SHTWIMS02
 {
@@ -28,8 +41,24 @@ namespace SHTWIMS02
 
         public void ConfigureServices(IServiceCollection services) // -----------------------------
         {
+            
             services.AddControllersWithViews(); // enable EndPoints (I think)
-       
+            services.AddDbContext<ApplicationDbContext>(options =>         
+                options.UseSqlServer(Configuration["Data:WIMS02Connect:ConnectionString"])
+           );
+            
+            // provides collections of more or less static lists
+            services.AddTransient<ICatalogItemRepository, EFCatalogItemRepository>();            
+            services.AddTransient<ILocationRepository, EFLocationRepository>();
+            services.AddTransient<ICountyRepository, EFCountyRepository>();
+            services.AddTransient<IPullHdrRepository, EFPullHdrRepository>();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp)); // p 273
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // p 273
+            services.AddTransient<IPullHdrRepository, EFPullHdrRepository>(); // p 287
+            services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
+
         } // eo ConfigureServices -----------------------------------------------------------------
 
 
@@ -51,21 +80,29 @@ namespace SHTWIMS02
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseStatusCodePages();
             app.UseHttpsRedirection();
             
-            //app.UseSession(); //this generates an exception 
-            /*
-             InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.Session.ISessionStore' 
-              while attempting to activate 'Microsoft.AspNetCore.Session.SessionMiddleware'.
-             */
-
-
+            app.UseSession(); //p 264
+            
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                name: "AreaRoute",
+                pattern: "{area:exists}/{controller=Pull}/{action=PullHdr}/{id?}");
+
+                
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // Create database tables that already have data
+            // CatalogItemSeedData.EnsurePopulated(app);
+            // CountySeedData.EnsurePopulated(app);
+            // PullHdrSeedData.PopulatedPullHdr(app);
+            // PullItemSeedData.EnsurePopulated(app);
         } // eo Configure method ------------------------------------------------------------------
 
     } // eo Startup class -------------------------------------------------------------------------

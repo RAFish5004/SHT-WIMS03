@@ -10,11 +10,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace SHTWIMS02.Models
 {
     public class CountBase // ---------------------------------------------------------------------
-    {
+    {        
         public string ItemId { get; set; } // item identifier code
         public string UoM { get; set; } // unit of measure
         public int Qty { get; set; } // quantity, shipped, received or counted       

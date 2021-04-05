@@ -1,0 +1,24 @@
+﻿@*
+    /Cart/Index - CartController Index View requests a searchString to send to CiListFiltered action 
+   
+
+*@
+@{
+    ViewData["Title"] = "Cart Index View";
+}
+
+
+<body>
+    <h2>Cart Index View </h2>    
+
+    <!-- make an input box and send filter string to ICListFilter action method in CartController -->
+    <form asp-action="CiListFiltered">
+        <div>
+            <p>
+                Find by name: <input id="filterString" type="text" name="filterString" />
+                <input type="submit" value="Search" class="btn btn-info" />
+
+            </p>
+        </div>
+    </form>
+</body>

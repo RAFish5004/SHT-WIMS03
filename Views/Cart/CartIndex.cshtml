@@ -1,0 +1,58 @@
+﻿
+@*
+    CartIndex.cshtml is a summary listing of all the items in the current Cart
+*@
+@model CartIndexViewModel
+
+@{
+    ViewData["Title"] ="CartIndexViewModel";
+}
+
+<h2>Current Cart</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th width="100px">Item Id</th>
+            <th>Description</th>
+            <th width="20px">Qty</th>
+            <th width="15px">UoM</th>
+            <th width="70px">Date Rqd</th>
+            <th>Comment</th>
+        </tr>
+
+    </thead>
+    <!---->
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr>
+                <td class="text-center" width="100px">@line.ItemId</td>
+                <td class="text-left">@line.Description</td>
+                <td class="text-right" width="20px">@line.Qty</td>
+                <td class="text-left" width="15px">@line.UoM</td>
+                <td class="text-right" width="70px">@line.DateNeeded.ToShortDateString()</td>
+                <td class="text-reset">@line.Comment</td>
+                <td>
+                    <form asp-action="RemoveFromCart" method="post">
+                        <input type="hidden" name="ItemId" value="@line.ItemId" />
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            Remove
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <!---->
+    <tfoot>
+
+
+    </tfoot>
+</table>
+<div class="text-center">
+    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+    <a class="btn btn-primary" href="/Cart/Index">Continue pulls</a>
+    <a class="btn btn-primary" asp-action="Checkout" asp-controller="PullHdr">Check out</a>
+</div>

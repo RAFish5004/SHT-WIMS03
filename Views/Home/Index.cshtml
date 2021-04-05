@@ -1,4 +1,8 @@
-﻿@{
+﻿<!--Index.cshtml - Main opening screen -->
+
+@{ 
+
+    Layout = "_Layout-Open";
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,10 +11,11 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a asp-controller="Pull" asp-action="PullIndex">Pull Items</a>
+        <a asp-area="Pull"  asp-controller="PullHdr" asp-action="PullMenu">Pull Items</a>
         <a href="#">Receive Items</a>
         <a href="#">Count</a>
-        <a asp-controller="Location" asp-action="LocationIndex">Locations</a>
+        <a asp-controller="CatalogItem" asp-action="CiListView">Catalog Items</a>
+        <a asp-area="Locate" asp-controller="Location" asp-action="LocationIndex">Locations</a>
         <a asp-controller="Home" asp-action="Index">Home</a>
         <a href="#">Reports</a>
     </div>
@@ -31,7 +36,7 @@
 
         </header>
         <a onclick="openNav()" title="Main Menu">
-            <img style="width: 30px; height: 30px;" src="~/Images/HmBgr01.png" alt="MenuBtn Image">
+            <img class="HmBgr01" src="~/Images/HmBgr01.png" alt="MenuBtn Image">
         </a>
 
         <!-- image actual size: 883w x 710h  -->

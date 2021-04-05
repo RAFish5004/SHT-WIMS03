@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SHTWIMS02.Models;
 using SHTWIMS02.Controllers;
-using Microsoft.AspNetCore.Mvc.ModelBinding;    
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace SHTWIMS02.Controllers
+namespace SHTWIMS02.Areas.Pull.Controllers
 {
+    [Area("Pull")]
     public class PullItemController  : Controller
     {        
 
@@ -22,6 +23,8 @@ namespace SHTWIMS02.Controllers
           // empty at present
         
         } // eo constructor //---------------------------------------------------------------------              
+
+
 
 
 

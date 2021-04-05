@@ -1,0 +1,72 @@
+﻿@*
+    PullHdr.cshtml, 200909 Header information for inventory Pull.
+*@
+@{
+}
+
+@model SHTWIMS02.Areas.Pull.Models.PullHdr
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pull from Inventory</title>
+
+    <!--local non-BS styles-->
+    <link rel="stylesheet" href="~/css/RFStyles.css">
+
+</head>
+
+<body>
+    <form asp-action="PullHdrForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label class="formLabel" asp-for="LocationId"></label>
+            <input class="formInput" asp-for="LocationId" />
+        </p>
+        <p>
+            <label class="formLabel" asp-for="Requester"></label>
+            <input class="formInput" asp-for="Requester" />
+        </p>
+       
+        <p>
+            <label class="formLabel" asp-for="ReqPhone"></label>
+            <input class="formInput" asp-for="ReqPhone" />
+        </p>
+        <p>
+            <label class="formLabel" asp-for="ReqEmail"></label>
+            <input class="formInput" asp-for="ReqEmail" />
+        </p>
+       
+        <p>
+            <label class="formLabel" asp-for="PullDate"></label>
+            <input class="formInputDate" type="date" asp-for="PullDate" />
+        </p>
+        <p>
+            <label class="formLabel" asp-for="Destination"></label>
+            <input class="formInput" asp-for="Destination" />
+        </p>
+        <p>
+            <label class="formLabel" asp-for="Comment"></label>
+            <input class="formComment" asp-for="Comment" />
+        </p>
+        <p>
+            <label class="formLabel">Order Status</label>
+            <select asp-for="Status">               
+                <option value="open">Open</option>
+                <option value="partial">Partial</option>
+                <option value="closed">Closed</option>
+            </select>
+        </p>
+        <div class="text-center">
+            <input class="btn btn-primary" type="submit" value="Complete Order"  />
+        </div>
+
+    </form>
+</body>
+
+</html>
+

@@ -1,0 +1,65 @@
+﻿@*
+    ** should be renamed to CartLineForm
+     /Views/Cart/CartForm.cshtml
+    <link tag - ** the asp-append-version="true" forces browser to use updated CSS file
+     see: https://stackoverflow.com/questions/38231739/how-to-disable-browser-cache-in-asp-net-core-rc2
+*@
+@{
+
+}
+@model CartLine
+
+<body>
+    <div>
+
+        <form method="post">
+            <h2> @ViewBag.AmPm  Welcome to Sam Houston Territory Inventory Management System </h2>
+            <h1></h1>
+
+            <div class="form-group">
+                <label class="formLabel" asp-for="ItemId">ItemId</label>
+                <input class="formInput" asp-for="ItemId" readonly />
+            </div>
+
+            <div class="form-group">
+                <label class="formLabel" asp-for="UoM">UoM</label>
+                <input class="formInput" asp-for="UoM" readonly />
+            </div>
+
+            <div class="form-group">
+                <label class="formLabel" asp-for="Description">Description</label>
+                <input class="formComment" asp-for="Description" readonly />
+            </div>
+
+            <div class="form-group">
+                <label class="formLabel" asp-for="Qty"></label>
+                <input class="formInput" asp-for="Qty" min="1" autofocus />
+            </div>
+            <div class="form-group">
+                <label class="formLabel" asp-for="DateNeeded"></label>
+                <!-- input class="formInputDate" type="date" asp-for="DateNeeded" asp-format="{0:dd-mm-yy}" / -->
+                <input class="formInputDate" type="date" asp-for="DateNeeded" />
+            </div>
+            <div class="form-group">
+                <label class="formLabel" asp-for="Comment"></label>
+                <textarea class="formComment" asp-for="Comment"></textarea>
+            </div>
+
+            <!-- Add To Cart  -->
+            <div>
+    <!--
+    <input type="hidden" asp-for="CartLineId" />
+    -->
+                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <span class="card-text p-1">
+
+                    <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right" asp-action="AddToCart">
+                        Add to Cart
+                    </button>
+                </span>
+            </div>
+
+        </form>
+
+    </div>
+</body>

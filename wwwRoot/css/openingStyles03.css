@@ -1,11 +1,38 @@
-/*styles.css*/
+/*   openingStyles03.css for opening screen, updated 210327   */
 
-html{
-   font-family: Arial, Helvetica, sans-serif;
-   background-color: rgb(214,188,188);
-   border: 2px solid purple;   
-   max-height: 700px;
-   	
+
+/* font section */
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: red;
+}
+
+h2 {
+    color: blue;
+}
+
+header {
+
+}
+
+/*  */
+html {
+   
+    background-color: rgb(150,150,170);
+    border: 2px solid purple;
+    max-height: 750px;
+    margin: auto;
+}
+
+body {
+    border: 2px solid darkred;
+    background-color: rgb(240, 200,200);
+    margin: 20px auto;
+    max-height: 650px;
+    max-width: 1000px;
 }
 
 header{ 
@@ -14,7 +41,6 @@ header{
   grid-row: 1/2;
 }
 
-
 h1{
     color: red;
    }
@@ -22,6 +48,14 @@ h1{
 h2{
    color: blue;
 }
+
+/* open menu button */
+.HmBgr01 {
+    margin-left: 10px;
+    width: 30px; 
+    height: 30px;
+}
+
 
 /*move ARC logo to the right  */
 .img-float-right{
@@ -37,12 +71,10 @@ h2{
 
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
+  max-height: 700px; /* use max-height  */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
+  z-index: 1; /* Stay on top */  
   background-color: #ff0000; /* Red*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -90,17 +122,17 @@ h2{
 
 .suContainer{
   	    max-width: 1000px;
-            display: grid;
-            grid-template-columns: repeat(10, minmax(50px,100px));
+        display: grid;
+        grid-template-columns: repeat(10, minmax(50px,100px));
 	    grid-template-rows: repeat(8, minmax(50px,1fr));
-            grid-gap: 10px;
+        grid-gap: 10px;
 	    
 	}
 
 div img{
-width: 80px;
-height: 80px;
-}
+    width: 80px;
+    height: 80px;
+    }
 
 header div{
 border:2px solid red; 
@@ -140,7 +172,7 @@ aside
 	font-family:  cursive ;
 	font-weight: bold;
 	font-size: 18px;  
-        color: rgb(165,75,75);
+    color: rgb(165,75,75);
 	text-align: center;
 	width; 200px;   
 	grid-column: 3/6; 
