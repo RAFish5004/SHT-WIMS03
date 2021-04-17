@@ -1,0 +1,75 @@
+﻿@*
+    PullHdr.cshtml, 200909 Header information for inventory Pull.
+*@
+@{
+    ViewData["Title"] = "Pull Header";
+    ViewData["pageTitle"] = "Pull Header Form";
+}
+
+@model SHTWIMS02.Areas.Pull.Models.PullHdr
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pull from Inventory</title>
+
+    <!--local non-BS styles-->
+    <link rel="stylesheet" href="~/css/RFStyles.css">
+
+</head>
+
+<body>
+    <form asp-action="PullHdrForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <ul>
+            <li>
+                <label class="formLabel" asp-for="LocationId"></label>
+                <input class="formInput" asp-for="LocationId" />
+            </li>
+            <li>
+                <label class="formLabel" asp-for="Requester"></label>
+                <input class="formInput" asp-for="Requester" />
+            </li>
+
+            <li>
+                <label class="formLabel" asp-for="ReqPhone"></label>
+                <input class="formInput" asp-for="ReqPhone" />
+            </li>
+            <li>
+                <label class="formLabel" asp-for="ReqEmail"></label>
+                <input class="formInput" asp-for="ReqEmail" />
+            </li>
+
+            <li>
+                <label class="formLabel" asp-for="PullDate"></label>
+                <input class="formInputDate" type="date" asp-for="PullDate" />
+            </li>
+            <li>
+                <label class="formLabel" asp-for="Destination"></label>
+                <input class="formInput" asp-for="Destination" />
+            </li>
+            <li>
+                <label class="formLabel" asp-for="Comment"></label>
+                <input class="formComment" asp-for="Comment" />
+            </li>
+            <li>
+                <label class="formLabel">Order Status</label>
+                <select asp-for="Status">
+                    <option value="open">Open</option>
+                    <option value="partial">Partial</option>
+                    <option value="closed">Closed</option>
+                </select>
+            </li>
+                <li>
+                    <input class="btn btn-primary" type="submit" value="Complete Order" />
+                </li>
+        </ul>
+    </form>
+</body>
+
+</html>
+

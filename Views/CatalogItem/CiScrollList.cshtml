@@ -5,12 +5,12 @@
 @model IEnumerable<CatalogItem>
 
 @{ 
-
+    ViewData["Title"] = "CI Scroll List";
     ViewData["pageTitle"] = "Catalog Item Scroll List";
 }
 
-
-<div id="scrollList" style="height:400px; width:700px; overflow:auto; background-color:lavenderblush; padding-left:2rem">
+<body>
+<div id="scrollList" >
     <div id="content">
         @foreach (var cat in Model)
         {
@@ -20,3 +20,4 @@
         }
     </div>
 </div>
+</body>

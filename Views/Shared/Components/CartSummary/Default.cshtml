@@ -1,0 +1,23 @@
+﻿@*
+    Cart summary view p 277
+    - Views/Shared/Components/CartSummary/Default.cshtml
+*@
+@{
+}
+@model Cart
+
+<div >
+    @if (Model.Lines.Count() > 0)
+    {
+        <small class="navbar-text">
+            <b>Current Cart:</b>
+            @Model.Lines.Sum(x => x.Qty) items
+        </small>
+    }
+    <a class="btn btn-light"
+       asp-controller="Cart"
+       asp-action="CartIndex"
+       asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">
+        <i class="fa fa-shopping-cart"></i>
+    </a>
+</div>

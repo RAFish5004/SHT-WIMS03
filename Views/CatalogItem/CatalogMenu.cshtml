@@ -1,0 +1,22 @@
+﻿@*
+    CatalogMenu.cshtml, 210406
+    Author: Russell Fisher
+    Initial landing site for catalog item options
+*@
+
+@{
+    ViewData["Title"] = "Catalog Menu";
+    ViewData["pageTitle"] = "Catalog Item Menu";
+}
+<body>
+    <div> <!-- this div element is the formatting and layout target -->
+    <form>
+        <ul style="list-style:none" >
+            <li> <a asp-controller="CatalogItem" asp-action="CiScrollList">Catalog Item Listing</a> </li>
+            <li> <a asp-controller="CatalogItem" asp-action="SearchString" ></a> </li>
+            <li> <a asp-controller="CatalogItem" asp-action="">TBA </a> </li>
+        </ul>
+
+    </form>
+    </div>
+</body>

@@ -6,18 +6,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet"
-          asp-href-include="/lib/bootstrap/dist/**/*.min.css"
-          asp-href-exclude="**/*-reboot*" />
-    <link rel="stylesheet" asp-href-include="/lib/font-awesome/css/*.css" />
+    <!--
+         <link rel="stylesheet"
+               asp-href-include="/lib/bootstrap/dist/**/*.min.css"
+               asp-href-exclude="**/*-reboot*" />
+         <link rel="stylesheet" asp-href-include="/lib/font-awesome/css/*.css" />
+    -->
     <link rel="stylesheet" href="~/css/regularStyles01.css">
     <script defer src="~/js/openingScripts04.js"></script>
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
     <title> @ViewData["Title"] </title>
 </head>
 
 <!--  ------------------ start Body --------------      -->
-<body >
+<body>
     <header>
         <img src="~/images/InvenIcon.png">
         <div>
@@ -25,24 +27,24 @@
         </div>
         <img src="~/images/ARCLogo01.jpg">
     </header>
+    
 
-
-<div>
-    @RenderBody();
-</div>
-
-
-<footer>
-    <p>
-        Regular Page Footer
-        @ViewData["pageFooter"]
-    </p> 
     <div>
-        <span style="color:black; font-size:20px;">
-            Contact: russell.fisher@redcross.org
-        </span>
+        @RenderBody()
     </div>
-</footer>
+
+
+    <footer>
+        <p>
+            SHTWIMS02.sln
+            @ViewData["pageFooter"]
+        </p>
+        <div>
+            <span style="color:black; font-size:1.2rem;">
+                Contact: russell.fisher@redcross.org
+            </span>
+        </div>
+    </footer>
 </body> 
 <!--   --------------- eo Body -------------------   -->
 

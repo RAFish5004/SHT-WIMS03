@@ -22,9 +22,15 @@ namespace SHTWIMS02.Controllers
             MakeDictionary(); // create 
 
         } // eo constructor -----------------------------------------------------------------------
-       
 
-        public ViewResult CiScrollList() // ---------------------------------------------------------
+        public ViewResult CatalogMenu() // --------------------------------------------------------
+        {
+            return View();
+        
+        } // eo CatalogMenu method ----------------------------------------------------------------
+
+
+        public ViewResult CiScrollList() // -------------------------------------------------------
         {
             
                return View(repository.CatalogItems.OrderBy(p => p.Description));
@@ -74,5 +80,5 @@ namespace SHTWIMS02.Controllers
         } // eo CiSelectList method ---------------------------------------------------------------
 
 
-    } // eo CatalogItemController class ---------------------------------------------------------------
+    } // eo CatalogItemController class -----------------------------------------------------------
 } // eo namespac

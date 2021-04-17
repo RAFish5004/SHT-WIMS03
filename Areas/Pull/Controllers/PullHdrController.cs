@@ -37,9 +37,11 @@ namespace SHTWIMS02.Areas.Pull.Controllers
 
         } // eo Index method ----------------------------------------------------------------------
 
+        
         public ViewResult PullMenu() // first landing point for Pull ---------------------------
         {
             return View();
+
         } // eo PullMenu action method ------------------------------------------------------------
 
 
@@ -65,7 +67,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
                     pull.PullItems.Add(new PullItem(line));
                 }
                 repository.SavePullHdr(pull);
-                return RedirectToAction(nameof(Completed));                
+                return RedirectToAction(nameof(CartCompleted));                
             }
             else
             {
@@ -74,7 +76,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
             }
         } // eo PullHdrForm post version ----------------------------------------------------------
 
-        public ViewResult Completed() // ----------------------------------------------------------
+        public ViewResult CartCompleted() // ----------------------------------------------------------
         {
             cart.Clear();
             return View();

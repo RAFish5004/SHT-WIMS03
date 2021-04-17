@@ -1,9 +1,11 @@
 /*   openingStyles03.css for opening screen, updated 210327   */
 
 
-/* font section */
+/*  font section  */
+
 html {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /*  16px consistent with Bootstrap 5.0  */
 }
 
 h1 {
@@ -31,7 +33,7 @@ body {
     border: 2px solid darkred;
     background-color: rgb(240, 200,200);
     margin: 20px auto;
-    max-height: 650px;
+    max-height: 700px;
     max-width: 1000px;
 }
 
@@ -41,13 +43,7 @@ header{
   grid-row: 1/2;
 }
 
-h1{
-    color: red;
-   }
 
-h2{
-   color: blue;
-}
 
 /* open menu button */
 .HmBgr01 {
@@ -120,14 +116,15 @@ h2{
 
 /* ------------------- general styles and grid coordinates --------------------- */
 
-.suContainer{
-  	    max-width: 1000px;
-        display: grid;
-        grid-template-columns: repeat(10, minmax(50px,100px));
-	    grid-template-rows: repeat(8, minmax(50px,1fr));
-        grid-gap: 10px;
-	    
-	}
+.suContainer {
+    max-width: 1000px;
+    /*max-height: 40rem; */
+    display: grid;
+    grid-template-columns: repeat(10, minmax(50px,100px));
+    grid-template-rows: repeat(8, minmax(50px,1fr));
+    grid-gap: 10px;
+    /*border: 2px dashed green;*/
+}
 
 div img{
     width: 80px;
@@ -147,7 +144,7 @@ justify-content:space-between;
     width:520px; 
     height:480px; 
     grid-column: 3/10; 
-    grid-row:2 / 9; 
+    grid-row:2 / 8; 
 }
 
 #greetpara{
@@ -174,7 +171,7 @@ aside
 	font-size: 18px;  
     color: rgb(165,75,75);
 	text-align: center;
-	width; 200px;   
+	width: 250px;   
 	grid-column: 3/6; 
 	grid-row: 3/5;  	
 	background-color: rgba(230,150, 150, 0.2 );

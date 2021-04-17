@@ -5,33 +5,37 @@
 @model CartIndexViewModel
 
 @{
-    ViewData["Title"] ="CartIndexViewModel";
+    Layout = "_Layout-Cart";
+    ViewData["Title"] ="Cart Index";
+    ViewData["pageTitle"] = "Cart Index";
 }
 
-<h2>Current Cart</h2>
-<table class="table table-bordered table-striped">
+<body>
+    <div> <!-- this elements is the target of general CSS styling, green dotted border -->
+<h3>Current Cart Contents</h3>
+<table >
     <thead>
         <tr>
-            <th width="100px">Item Id</th>
-            <th>Description</th>
-            <th width="20px">Qty</th>
-            <th width="15px">UoM</th>
-            <th width="70px">Date Rqd</th>
-            <th>Comment</th>
+            <th style="width:7rem">Item Id</th>
+            <th style="width:18rem">Description</th>
+            <th style="width:1rem">Qty</th>
+            <th style="width:1rem">UoM</th>
+            <th style="width:6rem">Date Rqd</th>
+            <th style="width:12rem">Comment</th>
         </tr>
 
     </thead>
     <!---->
     <tbody>
         @foreach (var line in Model.Cart.Lines)
-        {
-            <tr>
-                <td class="text-center" width="100px">@line.ItemId</td>
+        {        
+            <tr class="tableItem-gradient">
+                <td class="text-center">@line.ItemId</td>
                 <td class="text-left">@line.Description</td>
-                <td class="text-right" width="20px">@line.Qty</td>
-                <td class="text-left" width="15px">@line.UoM</td>
-                <td class="text-right" width="70px">@line.DateNeeded.ToShortDateString()</td>
-                <td class="text-reset">@line.Comment</td>
+                <td class="text-center">@line.Qty</td>
+                <td class="text-center">@line.UoM</td>
+                <td class="text-center">@line.DateNeeded.ToShortDateString()</td>
+                <td class="text-left">@line.Comment</td>
                 <td>
                     <form asp-action="RemoveFromCart" method="post">
                         <input type="hidden" name="ItemId" value="@line.ItemId" />
@@ -42,6 +46,7 @@
                     </form>
                 </td>
             </tr>
+      
         }
     </tbody>
 
@@ -53,6 +58,10 @@
 </table>
 <div class="text-center">
     <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-    <a class="btn btn-primary" href="/Cart/Index">Continue pulls</a>
-    <a class="btn btn-primary" asp-action="Checkout" asp-controller="PullHdr">Check out</a>
+
+    <!-- <a class="btn btn-primary" href="/Cart/Index">Continue pulls</a> -->
+    <a class="btn btn-primary" asp-area="" asp-controller="Cart"  asp-action="Index" >Continue Pulls</a> 
+    <a class="btn btn-primary" asp-area="Pull" asp-controller="PullHdr" asp-action="Checkout">Check out</a>
 </div>
+</div>
+</body>

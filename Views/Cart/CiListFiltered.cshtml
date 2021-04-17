@@ -6,33 +6,35 @@
 
 *@
 @{
-    ViewData["Title"] = "Ci List Filtered ";
+    ViewData["Title"] = "Ci List Filtered ";    
+    ViewData["pageTitle"] = "Catalog Items Filtered List";
 }
 @model List<CatalogItem>
 
 
 <body>
-    <h2> @ViewBag.AmPm  This is a filtered search </h2>
-    <a asp-action="Index">Back to Index</a>
+    <div>
+        <h2> @ViewBag.AmPm  This is a filtered search </h2>
+        <a asp-action="Index">Back to Index</a>
 
-    <form asp-action="CartLineForm" method="post">
-        <label for="itmSelect">Select</label>
-        <select id="itmSelect" name="itmSelect" onchange="{this.form.submit()}">
-            @foreach (var itm in Model)
-            {
-                <option class="text-dark" value="@itm.ItemId">@itm.Description</option>
+        <form asp-action="CartLineForm" method="post">
+            <label for="itmSelect">Select</label>
+            <select id="itmSelect" name="itmSelect" onchange="{this.form.submit()}">
+                @foreach (var itm in Model)
+                {
+                    <option class="text-dark" value="@itm.ItemId">@itm.Description</option>
+                }
+
+            </select>
+        </form>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("itmSelect").value;
+                document.getElementById("itemIdCheck").innerHTML = "You selected: " + x;
+                //document.getElementById("itemDescr").innerHTML = document.getElementById("mySelect").;
             }
-
-        </select>
-    </form>
-
-    <script>
-        function myFunction() {
-            var x = document.getElementById("itmSelect").value;
-            document.getElementById("itemIdCheck").innerHTML = "You selected: " + x;
-            //document.getElementById("itemDescr").innerHTML = document.getElementById("mySelect").;
-        }
-    </script>
-
+        </script>
+   </div>
 </body>
 

@@ -3,12 +3,14 @@
     - see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
     - see: https://www.w3schools.com/cssref/css_selectors.asp
     - see: https://www.w3schools.com/Css/css_margin.asp
+    - selectors: https://www.w3schools.com/cssref/css_selectors.asp
 	
 */
 
 /* font styles  */
 html {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* consistent with Bootstrap 5.0 */
 }
 
 h1 {
@@ -21,38 +23,54 @@ h2 {
 
 body
 {
-    font-size: .9em/1.2;
+    font-size: 1rem;
 }
 
 header, footer {
-    font-size: 24px;
+    font-size: 1.6rem;
     font-weight: 600;
     color: red;
 }
+
+fieldset
+ {
+    font-size: 0.8rem;    
+}
+
+legend {
+    font-size: 1.25rem;
+}
+
 
 /* general layout section */
 
 html {    
     border: 2px solid purple;
     background-color: rgb(100,100,100);
-    max-height: 700px;
+    max-height: 45rem;
 }
 .regContainer {
-    max-width: 1000px;
+    max-width: 62.5rem;
     display: grid;
     grid-template-columns: repeat(12, minmax(50px,100px));
     grid-template-rows: repeat(8, minmax(80px,));
-    grid-gap: 10px;
+    grid-gap: 0.625rem;
     background-color: rgb(220, 190, 190);
 }
 
 body {
     width: 90%;
-    max-width: 1000px;
-    margin: 2em auto;
+    max-width: 63rem;    
+    margin: 1.25rem auto;
     border: 2px solid purple;
     background-color: rgb(214,188,188);
 }
+/* refine main body div for general appearance */
+    body > div {
+        border: 2px dotted green;
+        min-height: 28rem;
+        margin: 0.625rem;
+    }
 
 header,
 footer {
@@ -76,13 +94,354 @@ header {
 
 header, footer div {
        
-        padding:10px;
+        padding:0.625rem;
     }
 
 img {
     display: block;
-    width: 85px;
-    height: 80px;
+    width: 5.3rem;
+    height: 5rem;
+}
+
+#scrollList {
+    height:25rem; 
+    width:44rem; 
+    overflow:auto; 
+    background-color:lavenderblush; 
+    padding-left:1.2rem;
+}
+
+/* ----------------form related style rules------------      */
+
+form {    
+    margin: 0rem auto;
+    border: 2px dotted aliceblue;
+    max-width: 40rem; /* 640px */
+    overflow:auto; /* enforce scroll bars */
+}
+
+table {
+    margin: 1rem auto;
+}
+
+.tableItem-gradient {
+    border: 1px solid lawngreen;
+    margin: .3rem auto;
+    background: linear-gradient(rgb(190,250,190),rgb(210,210,250));
 }
 
 
+
+fieldset {
+    border-color: red;
+    border-radius: 1em;
+}
+
+
+form li + li {
+    margin-top: 1em;
+}
+
+
+li {
+    list-style: none;
+}
+
+label {
+    display: inline-block;
+    width: 7.5rem;
+    text-align: right;
+}
+
+input,
+textarea {
+    /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+    font: 1em sans-serif;
+    /* Uniform text field size */
+    width: 150px;
+    box-sizing: border-box;
+    /* Match form field borders */
+    border: 1px solid #999;
+}
+
+
+textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: top;
+    /* Provide space to type some text */
+    height: 5em;
+}
+
+/* ---------------- eo form related style rules -----------      */
+
+
+/* ---------------- Bootstrap 4.4.1 styles ----------------      */
+
+/* buttons */
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+}
+
+.btn:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn.disabled, .btn:disabled {
+    opacity: 0.65;
+}
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+    pointer-events: none;
+}
+
+/* -------- btn-primary ---------  */
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    .btn-primary:focus, .btn-primary.focus {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
+
+    .btn-primary.disabled, .btn-primary:disabled {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    /* ------------ btn-secondary ------------*/
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+    .btn-secondary:hover {
+        color: #fff;
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+
+    .btn-secondary:focus, .btn-secondary.focus {
+        color: #fff;
+        background-color: #5a6268;
+        border-color: #545b62;
+        box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+    }
+
+    .btn-secondary.disabled, .btn-secondary:disabled {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+
+/* ------------ btn-success ------------*/
+
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+    .btn-success:hover {
+        color: #fff;
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .btn-success:focus, .btn-success.focus {
+        color: #fff;
+        background-color: #218838;
+        border-color: #1e7e34;
+        box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+    }
+
+    .btn-success.disabled, .btn-success:disabled {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+/* ------------ btn-info ------------*/
+
+.btn-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+    .btn-info:hover {
+        color: #fff;
+        background-color: #138496;
+        border-color: #117a8b;
+    }
+
+    .btn-info:focus, .btn-info.focus {
+        color: #fff;
+        background-color: #138496;
+        border-color: #117a8b;
+        box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+    }
+
+    .btn-info.disabled, .btn-info:disabled {
+        color: #fff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+
+/* ------------ btn-warning ------------*/
+
+.btn-warning {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+    .btn-warning:hover {
+        color: #212529;
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+
+    .btn-warning:focus, .btn-warning.focus {
+        color: #212529;
+        background-color: #e0a800;
+        border-color: #d39e00;
+        box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
+    }
+
+    .btn-warning.disabled, .btn-warning:disabled {
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+
+/* ------------ btn-danger ------------*/
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+    .btn-danger:hover {
+        color: #fff;
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+    .btn-danger:focus, .btn-danger.focus {
+        color: #fff;
+        background-color: #c82333;
+        border-color: #bd2130;
+        box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+    }
+
+    .btn-danger.disabled, .btn-danger:disabled {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+/* ------------ btn-light ------------*/
+
+.btn-light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+    .btn-light:hover {
+        color: #212529;
+        background-color: #e2e6ea;
+        border-color: #dae0e5;
+    }
+
+    .btn-light:focus, .btn-light.focus {
+        color: #212529;
+        background-color: #e2e6ea;
+        border-color: #dae0e5;
+        box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+    }
+
+    .btn-light.disabled, .btn-light:disabled {
+        color: #212529;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+    }
+
+/* ------------ btn-dark ------------*/
+.btn-dark {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+    .btn-dark:hover {
+        color: #fff;
+        background-color: #23272b;
+        border-color: #1d2124;
+    }
+
+    .btn-dark:focus, .btn-dark.focus {
+        color: #fff;
+        background-color: #23272b;
+        border-color: #1d2124;
+        box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
+    }
+
+    .btn-dark.disabled, .btn-dark:disabled {
+        color: #fff;
+        background-color: #343a40;
+        border-color: #343a40;
+    }
+
+
+/* ---------------- eo Bootstrap 4.4.1 styles ------------      */

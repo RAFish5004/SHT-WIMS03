@@ -89,11 +89,9 @@ namespace SHTWIMS02
             {
                 endpoints.MapControllerRoute(
                 name: "AreaRoute",
-                pattern: "{area:exists}/{controller=Pull}/{action=PullHdr}/{id?}");
+                pattern: "{area}/{controller}/{action}/{id?}");                
 
-                
-
-                endpoints.MapControllerRoute(
+                endpoints.MapControllerRoute(   
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });

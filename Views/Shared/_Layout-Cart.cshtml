@@ -1,0 +1,60 @@
+﻿<!--
+   _Layout-Cart.cshtml, 210416
+    Author: Russell Fisher
+    - enable a separate set of conditions to display Cart Summary
+      and other related views
+    -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+         <link rel="stylesheet"
+               asp-href-include="/lib/bootstrap/dist/**/*.min.css"
+               asp-href-exclude="**/*-reboot*" />
+         <link rel="stylesheet" asp-href-include="/lib/font-awesome/css/*.css" />
+    -->
+    <link rel="stylesheet" href="~/css/regularStyles01.css">
+    <script defer src="~/js/openingScripts04.js"></script>
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <title> @ViewData["Title"] </title>
+</head>
+
+<!--  ------------------ start Body --------------      -->
+<body>
+    <header>
+        <img src="~/images/InvenIcon.png">
+        <div>
+            @ViewData["pageTitle"]
+        </div>
+        <img src="~/images/ARCLogo01.jpg">
+    </header>
+
+    <span class="text-right">
+        @await Component.InvokeAsync("CartSummary")
+    </span>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <footer>
+        <p>
+            SHTWIMS02.sln
+            @ViewData["pageFooter"]
+        </p>
+        <div>
+            <span style="color:black; font-size:1.2rem;">
+                Contact: russell.fisher@redcross.org
+            </span>
+        </div>
+    </footer>
+</body>
+<!--   --------------- eo Body -------------------   -->
+
+</html>

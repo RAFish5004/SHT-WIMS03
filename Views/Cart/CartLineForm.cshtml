@@ -5,61 +5,66 @@
      see: https://stackoverflow.com/questions/38231739/how-to-disable-browser-cache-in-asp-net-core-rc2
 *@
 @{
-
+    ViewData["Title"] = "Cart Line";
+    ViewData["pageTitle"] = "Cart Line Form";
 }
 @model CartLine
 
 <body>
-    <div>
+    <h3> @ViewBag.AmPm  Welcome to Sam Houston Territory Inventory Management System </h3>
 
-        <form method="post">
-            <h2> @ViewBag.AmPm  Welcome to Sam Houston Territory Inventory Management System </h2>
-            <h1></h1>
+    <form method="post">
 
-            <div class="form-group">
-                <label class="formLabel" asp-for="ItemId">ItemId</label>
-                <input class="formInput" asp-for="ItemId" readonly />
-            </div>
+        <fieldset>
+            <legend>Pull Item - Data Input</legend>
+            <ul>
 
-            <div class="form-group">
-                <label class="formLabel" asp-for="UoM">UoM</label>
-                <input class="formInput" asp-for="UoM" readonly />
-            </div>
+                <li class="form-group">
 
-            <div class="form-group">
-                <label class="formLabel" asp-for="Description">Description</label>
-                <input class="formComment" asp-for="Description" readonly />
-            </div>
+                    <label asp-for="ItemId">ItemId</label>
+                    <input class="form-control" asp-for="ItemId" readonly />
+                </li>
 
-            <div class="form-group">
-                <label class="formLabel" asp-for="Qty"></label>
-                <input class="formInput" asp-for="Qty" min="1" autofocus />
-            </div>
-            <div class="form-group">
-                <label class="formLabel" asp-for="DateNeeded"></label>
-                <!-- input class="formInputDate" type="date" asp-for="DateNeeded" asp-format="{0:dd-mm-yy}" / -->
-                <input class="formInputDate" type="date" asp-for="DateNeeded" />
-            </div>
-            <div class="form-group">
-                <label class="formLabel" asp-for="Comment"></label>
-                <textarea class="formComment" asp-for="Comment"></textarea>
-            </div>
+                <li>
+                    <label asp-for="UoM">UoM</label>
+                    <input asp-for="UoM" readonly />
+                </li>
 
-            <!-- Add To Cart  -->
-            <div>
-    <!--
-    <input type="hidden" asp-for="CartLineId" />
-    -->
-                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-                <span class="card-text p-1">
+                <li>
+                    <label asp-for="Description">Description</label>
+                    <input asp-for="Description" readonly />
+                </li>
 
-                    <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right" asp-action="AddToCart">
-                        Add to Cart
-                    </button>
-                </span>
-            </div>
+                <li>
+                    <label asp-for="Qty"></label>
+                    <input asp-for="Qty" min="1" autofocus />
+                </li>
+                <li>
+                    <label asp-for="DateNeeded"></label>
+                    <!-- input class="formInputDate" type="date" asp-for="DateNeeded" asp-format="{0:dd-mm-yy}" / -->
+                    <input class="formInputDate" type="date" asp-for="DateNeeded" />
+                </li>
+                <li>
+                    <label asp-for="Comment"></label>
+                    <textarea asp-for="Comment"></textarea>
+                </li>
 
-        </form>
+                <!-- Add To Cart  -->
+                <li>
+                    <!--
+                    <input type="hidden" asp-for="CartLineId" />
+                    -->
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                    <span class="card-text p-1">
 
-    </div>
+                        <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right" asp-action="AddToCart">
+                            Add to Cart
+                        </button>
+                    </span>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+
+
 </body>

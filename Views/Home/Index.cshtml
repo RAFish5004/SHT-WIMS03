@@ -1,4 +1,6 @@
-﻿<!--Index.cshtml - Main opening screen -->
+﻿<!--   
+    HomeController/Index.cshtml - Main opening screen
+-->
 
 @{ 
 
@@ -14,7 +16,7 @@
         <a asp-area="Pull"  asp-controller="PullHdr" asp-action="PullMenu">Pull Items</a>
         <a href="#">Receive Items</a>
         <a href="#">Count</a>
-        <a asp-controller="CatalogItem" asp-action="CiListView">Catalog Items</a>
+        <a asp-controller="CatalogItem" asp-action="CatalogMenu">Catalog Items</a>
         <a asp-area="Locate" asp-controller="Location" asp-action="LocationIndex">Locations</a>
         <a asp-controller="Home" asp-action="Index">Home</a>
         <a href="#">Reports</a>
@@ -23,7 +25,7 @@
     <!-- anchor and image elements to open the sidenav -->
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
     <!-- ---------------------- opening screen div ---------------------- -->
-    <div id="openingScn" class='suContainer' border='2pk solid red'>
+    <div id="openingScn" name="openingScn" class='suContainer'>
 
         <header>
 

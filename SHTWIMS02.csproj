@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Count\Views\" />
-    <Folder Include="Areas\Locate\Views\" />
-    <Folder Include="Areas\Receive\Views\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>

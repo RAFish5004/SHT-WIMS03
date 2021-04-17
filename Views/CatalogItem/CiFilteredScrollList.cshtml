@@ -5,23 +5,22 @@
 
 @model List<CatalogItem>
 
-@{ 
-
+@{       
+    ViewData["Title"] = "Filtered List";
     ViewData["pageTitle"] = "Filtered CiScrollList";
 }
 
 <body>
-    
-    <a asp-action="Home/Inded">Back to Index</a>
+    <div> <!-- this div element is the main formatting target -->
+        <a asp-action="searchString">Back</a>
 
-    <div style="height:400px; overflow:auto; background-color:mistyrose; padding-left:2rem">
-  
+        <div style="height:400px; overflow:auto; background-color:mistyrose; padding-left:2rem">
+
             @foreach (var itm in Model)
             {
-                <p id=ciListItem> @itm.ItemId - @itm.Description </p> 
-            }    
+                <p id=ciListItem> @itm.ItemId - @itm.Description </p>
+            }
+        </div>
     </div>
-    <p></p>
-
 </body>
 
