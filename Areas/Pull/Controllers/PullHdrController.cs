@@ -18,14 +18,18 @@ namespace SHTWIMS02.Areas.Pull.Controllers
     [Area("Pull")]
     public class PullHdrController : Controller // ------------------------------------------------
     {
+        private ICatalogItemRepository ciRepo;
         private IPullHdrRepository repository;
         private Cart cart;
+        public Dictionary<string, string> itemKVP;
+        public PullHdrListViewModel phliv;
 
-        public PullHdrController(IPullHdrRepository repoService, Cart cartService) // ----------
+        public PullHdrController(IPullHdrRepository repoService, Cart cartService, ICatalogItemRepository itemService) // ----------
         {
             repository = repoService;
             cart = cartService;
-        
+            phliv = new PullHdrListViewModel(repoService, itemService);
+
         } // eo constructor with dependency injection ---------------------------------------------
 
         // method call from CartIndex.cshtml Checkout button
