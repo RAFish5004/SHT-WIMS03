@@ -9,5 +9,9 @@ namespace SHTWIMS02.Models
     {
         IQueryable<CatalogItem> CatalogItems { get; }
 
+        List<string> Categories { get; }
+
+        Dictionary<string, string> CatItemKVP { get; }
+
     } // eo ICatalogItemRepository interface ------------------------------------------------------
 } // eo namespace

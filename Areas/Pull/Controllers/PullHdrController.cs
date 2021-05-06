@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SHTWIMS02.Models;
 using SHTWIMS02.Areas.Pull.Models;
+using SHTWIMS02.Pull.Models;
 
 
 namespace SHTWIMS02.Areas.Pull.Controllers
@@ -22,13 +23,16 @@ namespace SHTWIMS02.Areas.Pull.Controllers
         private IPullHdrRepository repository;
         private Cart cart;
         public Dictionary<string, string> itemKVP;
-        public PullHdrListViewModel phliv;
+        public PullHdrListViewModel phlvm;
+
+
 
         public PullHdrController(IPullHdrRepository repoService, Cart cartService, ICatalogItemRepository itemService) // ----------
         {
             repository = repoService;
             cart = cartService;
-            phliv = new PullHdrListViewModel(repoService, itemService);
+            ciRepo = itemService;
+            phlvm = new PullHdrListViewModel(repoService, itemService);
 
         } // eo constructor with dependency injection ---------------------------------------------
 

@@ -9,5 +9,9 @@ namespace SHTWIMS02.Areas.Locate.Models
     {
         IQueryable<Location> Locations { get; }
 
+        List<string> LocationNames { get; }
+
+        Dictionary<string, string> LocationsKVP { get; }
+
     } // eo ILocationRepository interface ---------------------------------------------------------
 } // eo namespace

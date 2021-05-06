@@ -69,7 +69,7 @@ body {
     body > div {
         border: 2px dotted green;
         min-height: 28rem;
-        margin: 0.625rem;
+        margin: 0.625rem;        
     }
 
 header,
@@ -130,11 +130,9 @@ table {
     background: linear-gradient(rgb(190,250,190),rgb(210,210,250));
 }
 
-
-
 fieldset {
     border-color: red;
-    border-radius: 1em;
+    border-radius: 0.5em;
 }
 
 

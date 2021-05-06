@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SHTWIMS02.Areas.Count
 {
+    [Area("Count")]
     public class CountHdrController : Controller // -----------------------------------------------
     {
 
