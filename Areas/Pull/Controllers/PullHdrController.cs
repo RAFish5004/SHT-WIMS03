@@ -23,6 +23,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
         private IPullHdrRepository repository;
         private Cart cart;
         public Dictionary<string, string> itemKVP;
+        public Dictionary<int, string> PullOrders;
         public PullHdrListViewModel phlvm;
 
 
@@ -32,6 +33,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
             repository = repoService;
             cart = cartService;
             ciRepo = itemService;
+            PullOrders = repoService.PullOrders;
             phlvm = new PullHdrListViewModel(repoService, itemService);
 
         } // eo constructor with dependency injection ---------------------------------------------

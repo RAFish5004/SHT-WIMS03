@@ -24,8 +24,23 @@ namespace SHTWIMS02.Areas.Pull.Models
 
         public IQueryable<PullHdr> PullHdrs => context.PullHdrs
             .Include(ph => ph.PullItems);
+        public Dictionary<int, string> PullOrders => MakePullOrders(); 
 
-        public void SavePullHdr(PullHdr pullHdr) // ----------------------------------------------
+        Dictionary<int, string> MakePullOrders() // -----------------------------------------------
+        {
+            Dictionary<int, string> phDict = new Dictionary<int, string>();
+
+            foreach (PullHdr ph in PullHdrs)
+            {
+                string phSummary = new string( $"{ ph.PullDate} {ph.Status} From {ph.LocationId} To {ph.Destination} By {ph.Requester}");
+                phDict.Add(ph.PullHdrId, phSummary);
+            }
+
+            return phDict;
+        } // eo MakePullOrders --------------------------------------------------------------------
+        
+        
+        public void SavePullHdr(PullHdr pullHdr) // -----------------------------------------------
         {
             context.AttachRange(pullHdr.PullItems);
             if (pullHdr.PullHdrId == 0)

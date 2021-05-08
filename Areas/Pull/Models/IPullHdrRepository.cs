@@ -10,6 +10,8 @@ namespace SHTWIMS02.Areas.Pull.Models
     {
         public IQueryable<PullHdr> PullHdrs { get; }
         
+        public Dictionary<int, string> PullOrders { get; }
+
         // use the work PullOrder starting here
         void SavePullHdr(PullHdr pullHdr);
        
