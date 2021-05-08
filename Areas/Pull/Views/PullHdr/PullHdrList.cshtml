@@ -1,0 +1,51 @@
+﻿@*
+    PullHdrList.cshtml, 210421
+    Author: Russell Fisher
+    the model is a PullHdrListViewModel object that carries a PullHdrRepository
+    but also a Dictionary to add item descriptions which are not part of the PullItem type
+*@
+
+@model PullHdrListViewModel
+
+
+@{
+    ViewData["Title"] = "Pull Headers";
+    ViewData["PageTitle"] = "Pull Header List View";
+    Layout = "_Layout-Reg";
+}
+
+
+    <div id="scrollList">
+        @if (Model.PullHdrs.PullHdrs.Count() > 0)
+        {
+
+            <table>
+                <caption>Pull Orders Report</caption>
+                <tr><th>Pull Id</th><th>Date</th><th>Location</th><th colspan="2">Details</th><th></th> </tr>
+                @foreach (PullHdr ph in Model.PullHdrs.PullHdrs)
+                {
+
+                    <tr class="pullHdr">
+                        <td>@ph.PullHdrId</td>
+                        <td>@ph.PullDate.ToShortDateString()</td>
+                        <td>@ph.LocationId</td>
+                        <td>Item Id</td>
+                        <td>Description</td>
+                        <td>Quantity</td>
+                    </tr>
+                    @foreach (PullItem pitem in ph.PullItems)
+                    {
+                        <tr>
+                            <td colspan="3"></td>
+                            <td>@pitem.ItemId</td>
+                            <td>@Model.CIKVP[pitem.ItemId]</td>
+                            <td>@pitem.QtyRequested</td>
+                            <td></td>
+                        </tr>
+                    }
+                    <tr></tr>
+                }
+
+            </table>
+        }
+  </div>

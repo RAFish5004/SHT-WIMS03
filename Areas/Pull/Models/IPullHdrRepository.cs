@@ -8,9 +8,13 @@ namespace SHTWIMS02.Areas.Pull.Models
    public interface IPullHdrRepository // --------------------------------------------------------------
     {
         public IQueryable<PullHdr> PullHdrs { get; }
-        
-        // use the work PullOrder starting here
+
+        List<string> PullSummaryList { get; }
+
+        //Dictionary<string, string> PullHdrKVP { get; }
+
+        // required method signature
         void SavePullHdr(PullHdr pullHdr);
-       
+
     } // eo IPullHdrsRepository -------------------------------------------------------------------
 } // eo namespace
