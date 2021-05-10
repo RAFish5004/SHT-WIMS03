@@ -32,7 +32,7 @@ namespace SHTWIMS02.Areas.Pull.Models
 
             foreach (PullHdr ph in PullHdrs)
             {
-                string phSummary = new string( $"{ ph.PullDate} {ph.Status} From {ph.LocationId} To {ph.Destination} By {ph.Requester}");
+                string phSummary = new string( $"Id: {ph.PullHdrId} Date: { ph.PullDate.ToShortDateString()}, Pull from {ph.LocationId}, Ship to {ph.Destination} By {ph.Requester} {ph.Status}");
                 phDict.Add(ph.PullHdrId, phSummary);
             }
 

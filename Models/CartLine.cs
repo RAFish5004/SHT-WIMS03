@@ -31,9 +31,9 @@ namespace SHTWIMS02.Models
         public int PullHdrId { get; set; }       
         public string ItemId { get; set; }
         public string Description { get; set; }
-        public string UoM { get; set; }
-        
-        [Required(ErrorMessage = "Please enter a quantity")]    
+        public string UoM { get; set; }        
+        [Required]
+        [Range(minimum: 1, maximum: 5000, ErrorMessage = "Please enter a quantity of one or more")]
         public int Qty { get; set; }
         [Required(ErrorMessage = "Please enter a valid date mm/dd/yy")]
         public DateTime DateNeeded { get; set; }
@@ -64,7 +64,7 @@ namespace SHTWIMS02.Models
             this.ItemId = ci.ItemId;
             this.Description = ci.Description;
             this.UoM = ci.UoM;
-            this.Qty = 0;
+            this.Qty = 1;
             this.DateNeeded = DateTime.Today;
 
         }// ---------------------------------------------------------------------------------------

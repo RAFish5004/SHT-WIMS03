@@ -39,7 +39,7 @@ namespace SHTWIMS02.Areas.Pull.Models
             // PullHdrId set by db
             this.ItemId = cl.ItemId;
             this.UoM = cl.UoM;
-            this.QtyRequested = cl.Qty;
+            this.QtyRequested = (int)cl.Qty;
             this.Comment = cl.Comment;
             this.DateNeeded = cl.DateNeeded;
 
@@ -52,6 +52,8 @@ namespace SHTWIMS02.Areas.Pull.Models
         [BindNever]
         [ForeignKey("PullHdrId")]
         public int PullHdrId { get; set; }
+        [Required]
+        [Range (minimum:1, maximum:5000, ErrorMessage ="Please enter a quantity greater than 1")]
         public int QtyRequested { get; set; }
         public int QtyShipped { get; set; }
         public DateTime DateNeeded { get; set; }

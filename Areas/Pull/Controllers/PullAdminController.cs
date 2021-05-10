@@ -27,6 +27,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
 
         public PullAdminController(IPullHdrRepository pulls, ICatalogItemRepository ci) // -----------------------------------------------------------
         {
+
             pullRepo = pulls;
             ciRepo = ci;
             cikvp = ci.CatItemKVP;
@@ -35,16 +36,39 @@ namespace SHTWIMS02.Areas.Pull.Controllers
         } // eo PullAdminContnroller class --------------------------------------------------------
 
 
-        public ViewResult Index() // -----------------------------------------------------------
+        public ViewResult Index() // --------------------------------------------------------------
         {
             return View();
 
         } // eo default view ----------------------------------------------------------------------
 
-        public ViewResult PullHdrList()
+        public ViewResult PullHdrList() // --------------------------------------------------------
         {
+            /* PullHdrList shows list of ... */
+
             return View(phlvm);
-        }
+        } // eo PullHdrList method ----------------------------------------------------------------
+
+        public IActionResult PullSelect() // --------------------------------------------------------
+        {            
+            return View("PullSelect",pullRepo.PullOrders);
+        
+        } // eo PullEdit action method // ---------------------------------------------------------
+
+        public ViewResult PullGet(int pullHdrId) // ----------------------------------------------
+        {
+            PullHdr Pull = new PullHdr();
+            /* This method receives the pullHdrId parameter from the PullSelect.csheml view.  The
+              parameter of type int is used to get the PullHdr object that will be edited.             
+             */
+            foreach (PullHdr ph in pullRepo.PullHdrs)
+            {
+                if (ph.PullHdrId == pullHdrId) Pull = ph;
+            }
+
+            return View("PullDisplay",Pull);  // the PullHdr item is selected now need to display it
+
+        } //  eo PullEdit action method -----------------------------------------------------------
 
     } // eo PullAdminController class -------------------------------------------------------------
 } // eo namespace 
