@@ -1,15 +1,80 @@
 ﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    PullDisplay.cshtml, 210512
+    Author: Russell Fisher
+     shows PullHdr retrieved from repo for  editing.
+    
+    url path: /PullAdmin/PullSelect => /PullAdmin/PullDisplay
+
 *@
-@model PullHdr
+
+@model PullDisplayViewModel
 
 @{
 
     ViewData["Title"] = "Pull Header";
-    ViewData["pageTitle"] = "Pull Header Form";
+    ViewData["pageTitle"] = "Pull Display Form";
     Layout = "_Layout-Reg";
 }
-<div>
 
+<div>
+    <form   >
+        <div>
+            <label asp-for="PHdr.PullHdrId" class="formLabel">Pull Id</label>
+            <input asp-for="PHdr.PullHdrId" class="formInput" readonly />
+        </div>
+
+        <div>
+            <label asp-for="PHdr.LocationId" class="formLabel"></label>
+            <input asp-for="PHdr.LocationId" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.PullDate" class="formLabel">Pull Date</label>
+            <input asp-for="PHdr.PullDate" class="formInput" readonly />
+        </div>
+        <div>
+            <label asp-for="PHdr.Destination" class="formLabel"></label>
+            <input asp-for="PHdr.Destination" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.Requester" class="formLabel"></label>
+            <input asp-for="PHdr.Requester" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.ReqPhone" class="formLabel"></label>
+            <input asp-for="PHdr.ReqPhone" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.ReqEmail" class="formLabel"></label>
+            <input asp-for="PHdr.ReqEmail" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.Status" class="formLabel"></label>
+            <input asp-for="PHdr.Status" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.Comment" class="formLabel"></label>
+            <input asp-for="PHdr.Comment" class="formComment" />
+        </div>
+        <table>
+            <caption>Pull Item List</caption>
+            <tr><th>Item Id</th><th>Description</th><th>UoM</th><th>Qty</th><th> Comment </th>   </tr>
+
+            @foreach (PullItem pitem in @Model.PHdr.PullItems)
+            {
+        <tr>            
+            <td>@pitem.ItemId</td>
+            <td>@Model.CIKVP[pitem.ItemId]</td>
+            <td>@pitem.UoM</td>
+            <td>@pitem.QtyRequested</td>
+            <td>@pitem.Comment</td>
+            <td></td>
+        </tr>
+            }
+            <tr></tr>
+
+
+        </table>
+
+    </form>
 
 </div>

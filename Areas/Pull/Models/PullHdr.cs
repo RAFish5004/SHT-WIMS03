@@ -20,10 +20,14 @@ namespace SHTWIMS02.Areas.Pull.Models
     public partial class PullHdr  // ----------------------------------------------------------------------
     {
         //private List<Pullitem> pullitems => PullItems;
+        private string pullDate;
+      
 
         public PullHdr() // -----------------------------------------------------------------------
         {
             this.PullDate = DateTime.Today;
+            //pullDate = DateTime.Today.ToShortDateString();
+            pullDate = DateTime.Today.ToString();
             this.PullItems = new List<PullItem>();
             
         }// default constructor -------------------------------------------------------------------
@@ -47,8 +51,9 @@ namespace SHTWIMS02.Areas.Pull.Models
         [Required(ErrorMessage = "Please select a Location")]
         public string LocationId { get; set; }
         [Required(ErrorMessage = "Please enter today's date")]
-        public DateTime PullDate { get; set; }
 
+        public DateTime PullDate { get; set; }
+                    
         [Required(ErrorMessage = "Where is this Pull order going?")]
         public string Destination { get; set; }
      

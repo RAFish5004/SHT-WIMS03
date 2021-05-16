@@ -53,7 +53,7 @@ html {
     max-width: 62.5rem;
     display: grid;
     grid-template-columns: repeat(12, minmax(50px,100px));
-    grid-template-rows: repeat(8, minmax(80px,));
+    grid-template-rows: repeat(8, minmax(80px,1fr));
     grid-gap: 0.625rem;
     background-color: rgb(220, 190, 190);
 }
@@ -113,6 +113,20 @@ img {
 
 /* ----------------form related style rules------------      */
 
+
+.formLabel {
+    width: 125px;
+}
+
+.formInput {
+    width: 200px;
+}
+
+.formComment {
+    width: 300px;
+    height: 40px;
+}
+
 form {    
     margin: 0rem auto;
     border: 2px dotted aliceblue;
@@ -171,14 +185,34 @@ textarea {
     height: 5em;
 }
 
-/* ---------------- eo form related style rules -----------      */
 
+/* ----------------- Field Validation styles ------------------  */
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-error {
+    display: none;
+}
+
+.field-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
 
 /* ---------------- Bootstrap 4.4.1 styles ----------------      */
 
 /* buttons */
-
-
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -440,6 +474,7 @@ fieldset:disabled a.btn {
         background-color: #343a40;
         border-color: #343a40;
     }
-
+    
+/* ------------- Field Validation classes ----------- */
 
 /* ---------------- eo Bootstrap 4.4.1 styles ------------      */

@@ -43,6 +43,7 @@ namespace SHTWIMS02.Models
         //private string description;
         //private DateTime dateNeeded = DateTime.Today;
 
+
         //public virtual PullHdr PullHdr { get; set; }
 
         public CartLine() // ----------------------------------------------------------------------

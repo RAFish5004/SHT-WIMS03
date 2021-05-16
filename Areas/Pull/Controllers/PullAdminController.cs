@@ -25,13 +25,20 @@ namespace SHTWIMS02.Areas.Pull.Controllers
         private Cart cart;
         private PullHdrListViewModel phlvm;
 
+        public Dictionary<string, string> CIKVP
+        {
+            set { cikvp = value; }
+            get { return cikvp; }
+
+        }
+
         public PullAdminController(IPullHdrRepository pulls, ICatalogItemRepository ci) // -----------------------------------------------------------
         {
 
             pullRepo = pulls;
             ciRepo = ci;
             cikvp = ci.CatItemKVP;
-            phlvm = new PullHdrListViewModel(pulls,ci);
+            phlvm = new PullHdrListViewModel(pulls, ci);
 
         } // eo PullAdminContnroller class --------------------------------------------------------
 
@@ -42,33 +49,24 @@ namespace SHTWIMS02.Areas.Pull.Controllers
 
         } // eo default view ----------------------------------------------------------------------
 
-        public ViewResult PullHdrList() // --------------------------------------------------------
-        {
-            /* PullHdrList shows list of ... */
 
-            return View(phlvm);
-        } // eo PullHdrList method ----------------------------------------------------------------
 
         public IActionResult PullSelect() // --------------------------------------------------------
-        {            
-            return View("PullSelect",pullRepo.PullOrders);
-        
+        {
+            return View("PullSelect", pullRepo.PullOrders);
+
         } // eo PullEdit action method // ---------------------------------------------------------
 
-        public ViewResult PullGet(int pullHdrId) // ----------------------------------------------
-        {
-            PullHdr Pull = new PullHdr();
-            /* This method receives the pullHdrId parameter from the PullSelect.csheml view.  The
-              parameter of type int is used to get the PullHdr object that will be edited.             
-             */
-            foreach (PullHdr ph in pullRepo.PullHdrs)
-            {
-                if (ph.PullHdrId == pullHdrId) Pull = ph;
-            }
+        public ViewResult PullDisplay(int pullHdrId) // ----------------------------------------------
+        {   
+            // created a PullDisplayViewModel to send in a PullHdr and CIKVP dictionary
 
-            return View("PullDisplay",Pull);  // the PullHdr item is selected now need to display it
+            PullHdr localPull = pullRepo.PullHdrs.FirstOrDefault(p => p.PullHdrId == pullHdrId);
 
-        } //  eo PullEdit action method -----------------------------------------------------------
+            PullDisplayViewModel PDVM = new PullDisplayViewModel(localPull, CIKVP); 
+            return View(PDVM); 
+
+        } //  eo PullDisplay action method -----------------------------------------------------------
 
     } // eo PullAdminController class -------------------------------------------------------------
 } // eo namespace 

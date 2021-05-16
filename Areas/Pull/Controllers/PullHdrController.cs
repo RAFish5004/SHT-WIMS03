@@ -92,5 +92,13 @@ namespace SHTWIMS02.Areas.Pull.Controllers
             return View();
         } // eo Completed action method -----------------------------------------------------------
 
+        public ViewResult PullHdrList() // --------------------------------------------------------
+        {
+            /* PullHdrList shows list of PullHdr and PullItems arranged in a table */
+
+            return View(phlvm);
+        } // eo PullHdrList method ----------------------------------------------------------------
+
+
     } // eo PullHdrController ---------------------------------------------------------------------
 } // eo namespac
