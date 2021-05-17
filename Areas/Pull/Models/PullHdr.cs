@@ -2,6 +2,7 @@
 // PullHdr.cs, 200905
 // Author: Russell Fisher
 // modelled after ASPMVC p 257
+// see: DisplayFormatAttribute Class for date formatting help
 // ========================================================
 
 using System;
@@ -52,6 +53,7 @@ namespace SHTWIMS02.Areas.Pull.Models
         public string LocationId { get; set; }
         [Required(ErrorMessage = "Please enter today's date")]
 
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTime PullDate { get; set; }
                     
         [Required(ErrorMessage = "Where is this Pull order going?")]

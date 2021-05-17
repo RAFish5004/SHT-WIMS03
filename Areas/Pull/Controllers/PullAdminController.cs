@@ -27,7 +27,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
 
         public Dictionary<string, string> CIKVP
         {
-            set { cikvp = value; }
+            //set { cikvp = value; }  
             get { return cikvp; }
 
         }
