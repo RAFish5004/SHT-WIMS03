@@ -115,16 +115,16 @@ img {
 
 
 .formLabel {
-    width: 125px;
+    width: 8rem;
 }
 
 .formInput {
-    width: 200px;
+    width: 14rem;
 }
 
 .formComment {
-    width: 300px;
-    height: 40px;
+    width: 20rem;
+    height: 2.5rem;
 }
 
 form {    
