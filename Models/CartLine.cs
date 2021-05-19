@@ -46,20 +46,14 @@ namespace SHTWIMS02.Models
 
         //public virtual PullHdr PullHdr { get; set; }
 
-        public CartLine() // ----------------------------------------------------------------------
-        {
-          
-
+        public CartLine() // default constructor --------------------------------------------------
+        {          
             // empty at present
+
         } // eo default constructor ---------------------------------------------------------------
 
-        //public CartLine(ICatalogItemRepository ciRepo) // -----------------------------------------
-        //{
-        //    ciRepository = ciRepo;
-        //    // empty default constructor
-        //} // eo default constructor ---------------------------------------------------------------
 
-        public CartLine(CatalogItem ci) // --------------------------------------------------------
+        public CartLine(CatalogItem ci) // alt 1 constructor---------------------------------------
         {
             // upgrade a CatalogItem to a CartLine object
             this.ItemId = ci.ItemId;
@@ -68,13 +62,12 @@ namespace SHTWIMS02.Models
             this.Qty = 1;
             this.DateNeeded = DateTime.Today;
 
-        }// ---------------------------------------------------------------------------------------
+        }// eo constructor from CatalogItem--------------------------------------------------------
 
-        public CartLine(PullItem pi) // -----------------------------------------------------------
+        public CartLine(PullItem pi)  // alt 2 constructor-----------------------------------------
         {
             
-            var ciRepository = sp.GetService<ICatalogItemRepository>();
-            
+            var ciRepository = sp.GetService<ICatalogItemRepository>();            
             
             // ** convert PullItem to Cartline object
             this.ItemId = pi.ItemId;
@@ -85,15 +78,6 @@ namespace SHTWIMS02.Models
             this.Comment = pi.Comment;
 
         } // eo constructor from PullItem ---------------------------------------------------------
-
-        //private string getDescription(string ItemId, ICatalogItemRepository repo)
-        //{
-         
-        //  string descr = repo.CatalogItems.FirstOrDefault(ci => ci.ItemId == pi.ItemId).Description;
-
-        //    return descr;
-        //}
-
 
     } //eo CartLine class -------------------------------------------------------------------------
 

@@ -22,6 +22,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
         private IPullHdrRepository pullRepo;
         private ICatalogItemRepository ciRepo;
         private Dictionary<string, string> cikvp;
+        private IPullItemRepository pitemRepo;
         private Cart cart;
         private PullHdrListViewModel phlvm;
 
@@ -32,9 +33,9 @@ namespace SHTWIMS02.Areas.Pull.Controllers
 
         }
 
-        public PullAdminController(IPullHdrRepository pulls, ICatalogItemRepository ci) // -----------------------------------------------------------
+        public PullAdminController(IPullHdrRepository pulls, ICatalogItemRepository ci,  IPullItemRepository pi) // -----------------------------------------------------------
         {
-
+            pitemRepo = pi;
             pullRepo = pulls;
             ciRepo = ci;
             cikvp = ci.CatItemKVP;
@@ -49,10 +50,11 @@ namespace SHTWIMS02.Areas.Pull.Controllers
 
         } // eo default view ----------------------------------------------------------------------
 
-
+        
 
         public IActionResult PullSelect() // --------------------------------------------------------
         {
+
             return View("PullSelect", pullRepo.PullOrders);
 
         } // eo PullEdit action method // ---------------------------------------------------------
@@ -67,6 +69,14 @@ namespace SHTWIMS02.Areas.Pull.Controllers
             return View(PDVM); 
 
         } //  eo PullDisplay action method -----------------------------------------------------------
+
+        public ViewResult PullItemDisplay(int pullItemId)
+        {            
+            PullItem pi = pitemRepo.PullItems.FirstOrDefault(pid => pid.PullItemId == pullItemId);           
+
+            ViewBag.Description = cikvp[pi.ItemId];
+            return View(pi);
+        }
 
     } // eo PullAdminController class -------------------------------------------------------------
 } // eo namespace 

@@ -48,14 +48,16 @@ namespace SHTWIMS02.Areas.Pull.Models
         [Key]
         [BindNever]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PullItemId { get; set; }             
+        public int PullItemId { get; set; }
         [BindNever]
         [ForeignKey("PullHdrId")]
         public int PullHdrId { get; set; }
         [Required]
-        [Range (minimum:1, maximum:5000, ErrorMessage ="Please enter a quantity greater than 1")]
+        [Range(minimum: 1, maximum: 5000, ErrorMessage = "Please enter a quantity greater than 1")]
         public int QtyRequested { get; set; }
         public int QtyShipped { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateNeeded { get; set; }
 
         // inherited from CountBase

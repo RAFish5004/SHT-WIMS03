@@ -17,17 +17,20 @@ namespace SHTWIMS02.Areas.Pull.Models
     {
         private ApplicationDbContext context;
 
+        public IQueryable<PullHdr> PullHdrs => context.PullHdrs
+           .Include(ph => ph.PullItems);
+        public Dictionary<int, string> PullOrders => MakePullOrders();
+
         public EFPullHdrRepository(ApplicationDbContext ctx) // -----------------------------------
         {
             context = ctx;
         } // eo EFPullHdrRepository constructor ---------------------------------------------------
 
-        public IQueryable<PullHdr> PullHdrs => context.PullHdrs
-            .Include(ph => ph.PullItems);
-        public Dictionary<int, string> PullOrders => MakePullOrders(); 
+       
 
         Dictionary<int, string> MakePullOrders() // -----------------------------------------------
         {
+            // this method creates PullOrder string objects to be used in PullSelect select list to enable editing
             Dictionary<int, string> phDict = new Dictionary<int, string>();
 
             foreach (PullHdr ph in PullHdrs)

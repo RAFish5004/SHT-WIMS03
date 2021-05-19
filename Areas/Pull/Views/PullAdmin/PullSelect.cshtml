@@ -18,9 +18,10 @@
     <a asp-action="Index">Back to Index</a>
    
     <label> Select a Pull Order for editing </label>
-    <form  asp-action="PullDisplay" method="post">
+    <form  asp-action="PullDisplay">
         <select name="pullHdrId" onchange="{this.form.submit()}">
             {
+            <option disabled selected value="">Select a Pull Order to edit</option>
                 @foreach (var pull in Model)
                 {
                     <option class="text-dark" value="@pull.Key">@pull.Value</option>

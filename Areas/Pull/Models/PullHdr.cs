@@ -45,15 +45,14 @@ namespace SHTWIMS02.Areas.Pull.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PullHdrId { get; set; }
         
-        [BindNever] // p 295
         public string Status { get; set; }
 
         [ForeignKey("LocationId")]
         [Required(ErrorMessage = "Please select a Location")]
         public string LocationId { get; set; }
-        [Required(ErrorMessage = "Please enter today's date")]
 
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Please enter a valid date")]
         public DateTime PullDate { get; set; }
                     
         [Required(ErrorMessage = "Where is this Pull order going?")]
@@ -61,16 +60,13 @@ namespace SHTWIMS02.Areas.Pull.Models
      
         [Required(ErrorMessage = "Who requested this Pull order? ")]
         public string Requester { get; set; }
+
         public string ReqPhone { get; set; }
+
         public string ReqEmail { get; set; }
+
         public string Comment { get; set; }
 
-
-        //public ICollection<PullItem> PullItems { get; set; }
-
-        // this virtual navigation property is critical to relationship
-        //public virtual ICollection<CartLine> CartLines { get; set; }
-        
         public virtual ICollection<PullItem> PullItems { get; set; }
 
     } //eo PullHdr class --------------------------------------------------------------------------

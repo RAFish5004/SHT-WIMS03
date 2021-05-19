@@ -54,7 +54,7 @@ namespace SHTWIMS02
             services.AddTransient<IPullHdrRepository, EFPullHdrRepository>();
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp)); // p 273
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // p 273
-            services.AddTransient<IPullHdrRepository, EFPullHdrRepository>(); // p 287
+            services.AddTransient<IPullItemRepository, EFPullItemRepository>(); 
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();

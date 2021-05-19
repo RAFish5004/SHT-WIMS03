@@ -1,4 +1,4 @@
-﻿// =================================================
+﻿// ================================================
 // PullDisplayViewModel.cs, 210516
 // Author: Russell Fisher
 // - the purpose of this VM is to send in a PullHdr object  
@@ -17,12 +17,12 @@ namespace SHTWIMS02.Areas.Pull.Models
 {
     public class PullDisplayViewModel // ----------------------------------------------------------
     {
-        private PullHdr phdr;
-        private Dictionary<string, string> cikvp;
+        //private PullHdr phdr;
+        //private Dictionary<string, string> cikvp;
       
 
-
         public PullHdr PHdr { get; set; }
+
         public Dictionary<string, string> CIKVP { get; set; }
 
         public PullDisplayViewModel (PullHdr ph, Dictionary<string, string> keyValuePairs)

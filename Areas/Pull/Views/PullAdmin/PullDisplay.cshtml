@@ -17,7 +17,7 @@
 }
 
 <div>
-    <form   >
+    <form  method="post">
         <div>
             <label asp-for="PHdr.PullHdrId" class="formLabel">Pull Id</label>
             <input asp-for="PHdr.PullHdrId" class="formInput" readonly />
@@ -67,7 +67,13 @@
             <td>@pitem.UoM</td>
             <td>@pitem.QtyRequested</td>
             <td>@pitem.Comment</td>
-            <td></td>
+            <!-- p 250 -->
+            <td><a class="btn btn-block btn-secondary"
+                   asp-action="PullItemDisplay"
+                   asp-controller="PullAdmin"
+                   asp-route-PullHdrId="@pitem.PullHdr"
+                   asp-route-PullItemId="@pitem.PullItemId"
+                   ></a></td>
         </tr>
             }
             <tr></tr>
