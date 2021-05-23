@@ -30,7 +30,7 @@ namespace SHTWIMS02.Areas.Pull.Models
             //pullDate = DateTime.Today.ToShortDateString();
             pullDate = DateTime.Today.ToString();
             this.PullItems = new List<PullItem>();
-            
+            this.Status = "Open";  // default to Open
         }// default constructor -------------------------------------------------------------------
 
         // ensure that PullHdrId is null by default
@@ -41,8 +41,9 @@ namespace SHTWIMS02.Areas.Pull.Models
         // Add Phone for requester
         // Add an email address for requester, see RegExp on p 40
 
-        [BindNever]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[BindNever]
         public int PullHdrId { get; set; }
         
         public string Status { get; set; }

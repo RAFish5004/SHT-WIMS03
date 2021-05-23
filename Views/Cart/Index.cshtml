@@ -1,11 +1,12 @@
 ﻿@*
+    This is not a normal Index view, it beginss the CartLine creation process
     /Cart/Index - CartController Index View requests a searchString to send to CiListFiltered action 
    
 
 *@
 @{
-    ViewData["Title"] = "Cart Index View";    
-    ViewData["pageTitle"] = "Cart Index View";
+    ViewData["Title"] = "Cart Line Item";    
+    ViewData["pageTitle"] = "Cart Line Item Filter";
 }
 
 <body>
@@ -17,7 +18,7 @@
                 <div>
                     <p>
                         Find by: <input id="filterString" type="text" name="filterString" />
-                        <input type="submit" value="Search" class="btn btn-info" />
+                        <input type="submit" value="Search" class="btn btn-sm" />
 
                     </p>
                 </div>

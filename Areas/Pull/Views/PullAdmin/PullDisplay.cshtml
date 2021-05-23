@@ -17,15 +17,19 @@
 }
 
 <div>
-    <form  method="post">
-        <div>
-            <label asp-for="PHdr.PullHdrId" class="formLabel">Pull Id</label>
-            <input asp-for="PHdr.PullHdrId" class="formInput" readonly />
-        </div>
-
+    <form method="post" asp-action="PullHdrChanged">
+        <!--
+    <div>
+        <label asp-for="PHdr.PullHdrId" class="formLabel">Pull Id</label>
+        <input asp-for="PHdr.PullHdrId" class="formInput" type="hidden" />
+    </div>
+     
+    <input type="hidden" name="PHdr.PullHdrId" value="Model.PHdr.PullHdrId" />
+    -->
+        <input type="hidden" asp-for="PHdr.PullHdrId" value="@Model.PHdr.PullHdrId" />
         <div>
             <label asp-for="PHdr.LocationId" class="formLabel"></label>
-            <input asp-for="PHdr.LocationId" class="formInput" />
+            <input asp-for="PHdr.LocationId" class="formInput" readonly />
         </div>
         <div>
             <label asp-for="PHdr.PullDate" class="formLabel">Pull Date</label>
@@ -47,10 +51,14 @@
             <label asp-for="PHdr.ReqEmail" class="formLabel"></label>
             <input asp-for="PHdr.ReqEmail" class="formInput" />
         </div>
-        <div>
+        <li>
+            <!-- p773 -->
             <label asp-for="PHdr.Status" class="formLabel"></label>
-            <input asp-for="PHdr.Status" class="formInput" />
-        </div>
+            <select asp-for="PHdr.Status"
+                    asp-items="@new SelectList(Enum.GetNames(typeof(StatusTerms)))">
+                <option selected value="Open"></option>
+            </select>
+        </li>
         <div>
             <label asp-for="PHdr.Comment" class="formLabel"></label>
             <input asp-for="PHdr.Comment" class="formComment" />
@@ -61,26 +69,26 @@
 
             @foreach (PullItem pitem in @Model.PHdr.PullItems)
             {
-        <tr>            
-            <td>@pitem.ItemId</td>
-            <td>@Model.CIKVP[pitem.ItemId]</td>
-            <td>@pitem.UoM</td>
-            <td>@pitem.QtyRequested</td>
-            <td>@pitem.Comment</td>
-            <!-- p 250 -->
-            <td><a class="btn btn-block btn-secondary"
-                   asp-action="PullItemDisplay"
-                   asp-controller="PullAdmin"
-                   asp-route-PullHdrId="@pitem.PullHdr"
-                   asp-route-PullItemId="@pitem.PullItemId"
-                   >Edit</a></td>
-        </tr>
+                <tr>
+                    <td>@pitem.ItemId</td>
+                    <td>@Model.CIKVP[pitem.ItemId]</td>
+                    <td>@pitem.UoM</td>
+                    <td>@pitem.QtyRequested</td>
+                    <td>@pitem.Comment</td>
+                    <!-- p 250 -->
+                    <td>
+                        <a class="btn btn-block btn-secondary"
+                           asp-action="PullItemDisplay"
+                           asp-controller="PullAdmin"
+                           asp-route-PullHdrId="@pitem.PullHdr"
+                           asp-route-PullItemId="@pitem.PullItemId">Edit</a>
+                    </td>
+                </tr>
             }
             <tr></tr>
-
-
         </table>
 
+        <input class="btn btn-primary" type="submit" value="Submit Changes" />
     </form>
 
 </div>

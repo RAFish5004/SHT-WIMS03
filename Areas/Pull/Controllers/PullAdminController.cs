@@ -14,6 +14,7 @@ using SHTWIMS02.Pull.Models;
 using SHTWIMS02.Areas.Pull.Models;
 
 
+
 namespace SHTWIMS02.Areas.Pull.Controllers
 {
     [Area("Pull")]
@@ -49,34 +50,57 @@ namespace SHTWIMS02.Areas.Pull.Controllers
             return View();
 
         } // eo default view ----------------------------------------------------------------------
-
         
-
         public IActionResult PullSelect() // --------------------------------------------------------
         {
-
+            // the Dictionary PullOrders is a property of of IPullHdrRepository
             return View("PullSelect", pullRepo.PullOrders);
 
         } // eo PullEdit action method // ---------------------------------------------------------
 
+        [HttpPost]    
         public ViewResult PullDisplay(int pullHdrId) // ----------------------------------------------
         {   
             // created a PullDisplayViewModel to send in a PullHdr and CIKVP dictionary
 
             PullHdr localPull = pullRepo.PullHdrs.FirstOrDefault(p => p.PullHdrId == pullHdrId);
-
+            var req = Request.Form["PullHdrId"];
+            var status = Request.Form["Status"];
             PullDisplayViewModel PDVM = new PullDisplayViewModel(localPull, CIKVP); 
             return View(PDVM); 
 
+
         } //  eo PullDisplay action method -----------------------------------------------------------
 
-        public ViewResult PullItemDisplay(int pullItemId)
-        {            
-            PullItem pi = pitemRepo.PullItems.FirstOrDefault(pid => pid.PullItemId == pullItemId);           
+        [HttpGet]
+        public ViewResult PullItemDisplay(int pullItemId) // --------------------------------------
+        {
+
+            PullItem pi = pitemRepo.PullItems.FirstOrDefault(pid => pid.PullItemId == pullItemId);
 
             ViewBag.Description = cikvp[pi.ItemId];
             return View(pi);
-        }
+
+        }// eo PullItemDisplay action method ------------------------------------------------------
+
+
+        [HttpPost]
+        public IActionResult PullHdrChanged(PullHdr phdr) // ------------------------------------
+        {
+          
+            if(phdr!=null) 
+            { 
+                // SavePullHdr method is member of EFPullHdrRepository.cs
+                pullRepo.SavePullHdr(phdr); 
+            }
+
+            //return RedirectToAction(nameof(Pull.Controllers.PullHdrController.PullMenu));
+            //RedirectToAction(string actionName, string controllerName);
+            return RedirectToAction("PullMenu", "PullHdr" );
+
+        } // eo PullHdrChanged action -------------------------------------------------------------
+
 
     } // eo PullAdminController class -------------------------------------------------------------
+
 } // eo namespace 

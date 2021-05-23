@@ -24,6 +24,11 @@ namespace SHTWIMS02.Pull.Models
         private ICatalogItemRepository ciRepo;
         static Dictionary<string, string> catItemKVP;
 
+        public ICatalogItemRepository CatItems
+        {
+            get { return ciRepo; }
+           
+        }
 
         public IPullHdrRepository PullHdrs
         {
@@ -35,7 +40,6 @@ namespace SHTWIMS02.Pull.Models
         {
             get { return catItemKVP; }
         }
-
 
 
         public PullHdrListViewModel(IPullHdrRepository repo, ICatalogItemRepository repo2) // -----

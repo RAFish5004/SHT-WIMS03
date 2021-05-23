@@ -107,10 +107,9 @@ namespace Areas.SHTWIMS02.Controllers
 
         } // eo AddToCart method ------------------------------------------------------------------
 
-        public ViewResult CartIndex(string returnUrl) // p 267 ----------------------------------------
-        //public ViewResult CartIndex()
-        {
-            // CartIndexViewModel 
+        public ViewResult CartIndex(string returnUrl) // p 267 ----------------------------------------      
+        {            
+            // View delcares a new CartIndexViewModel and initializes it
             return View(new CartIndexViewModel
             {
                 Cart = cart,

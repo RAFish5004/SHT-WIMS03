@@ -45,11 +45,12 @@ namespace SHTWIMS02.Areas.Pull.Models
 
         } // eo one parameter constructor ---------------------------------------------------------
 
-        [Key]
-        [BindNever]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        //[BindNever]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[Key]
         public int PullItemId { get; set; }
-        [BindNever]
+        //[BindNever]
         [ForeignKey("PullHdrId")]
         public int PullHdrId { get; set; }
         [Required]

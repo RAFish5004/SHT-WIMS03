@@ -27,7 +27,6 @@ namespace SHTWIMS02.Areas.Pull.Controllers
         public PullHdrListViewModel phlvm;
 
 
-
         public PullHdrController(IPullHdrRepository repoService, Cart cartService, ICatalogItemRepository itemService) // ----------
         {
             repository = repoService;
@@ -38,26 +37,24 @@ namespace SHTWIMS02.Areas.Pull.Controllers
 
         } // eo constructor with dependency injection ---------------------------------------------
 
-        // method call from CartIndex.cshtml Checkout button
+        // method call from CartIndex.cshtml Checkout button, selects [Post] version
         public ViewResult Checkout() => View("PullHdrForm", new PullHdr());
 
-        public ViewResult PullIndex() // -------------------------------------------------------
-        {
-            return View();
+        public ViewResult PullIndex() => View(); // -----------------------------------------------
+        //{
+        //  return View();
+        //} // eo PullIndex action method ---------------------------------------------------------
 
-        } // eo Index method ----------------------------------------------------------------------
 
-        
-        public ViewResult PullMenu() // first landing point for Pull ---------------------------
-        {
-            return View();
+        public ViewResult PullMenu() => View();// first landing point for Pull --------------------
+        //{
+        //    return View();
 
-        } // eo PullMenu action method ------------------------------------------------------------
+        //} // eo PullMenu action method ------------------------------------------------------------
 
 
         [HttpGet]
-        public ViewResult 
-            PullHdrForm() // -----------------------------------------------------
+        public ViewResult PullHdrForm() // -----------------------------------------------------
         {
             return View();
         } // eo PullHdrForm action method ---------------------------------------------------------
@@ -73,7 +70,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
             {
                 foreach (CartLine line in cart.Lines)
                 {
-                    // convert CartLine to PullItem
+                    // convert CartLine to PullItem in PullItem constructor
                     pull.PullItems.Add(new PullItem(line));
                 }
                 repository.SavePullHdr(pull);
@@ -84,6 +81,7 @@ namespace SHTWIMS02.Areas.Pull.Controllers
                 // need to decide where to go ?
                 return View();
             }
+
         } // eo PullHdrForm post version ----------------------------------------------------------
 
         public ViewResult CartCompleted() // ----------------------------------------------------------

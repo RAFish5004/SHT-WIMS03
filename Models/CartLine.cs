@@ -21,7 +21,7 @@ namespace SHTWIMS02.Models
 
     public partial class CartLine // --------------------------------------------------------
     {
-        //private readonly ICatalogItemRepository ciRepository; // add Description term back to incoming PullItem
+      
         private static IServiceProvider sp;
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -38,14 +38,7 @@ namespace SHTWIMS02.Models
         [Required(ErrorMessage = "Please enter a valid date mm/dd/yy")]
         public DateTime DateNeeded { get; set; }
         public string Comment { get; set; }
-
-        //private string itemId;
-        //private string description;
-        //private DateTime dateNeeded = DateTime.Today;
-
-
-        //public virtual PullHdr PullHdr { get; set; }
-
+        
         public CartLine() // default constructor --------------------------------------------------
         {          
             // empty at present
@@ -66,7 +59,7 @@ namespace SHTWIMS02.Models
 
         public CartLine(PullItem pi)  // alt 2 constructor-----------------------------------------
         {
-            
+            // enable Description property
             var ciRepository = sp.GetService<ICatalogItemRepository>();            
             
             // ** convert PullItem to Cartline object
