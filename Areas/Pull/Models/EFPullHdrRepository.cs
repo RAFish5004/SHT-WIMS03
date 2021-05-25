@@ -16,16 +16,17 @@ namespace SHTWIMS02.Areas.Pull.Models
     public class EFPullHdrRepository : IPullHdrRepository // --------------------------------------
     {
         private ApplicationDbContext context;
-
+       
         public IQueryable<PullHdr> PullHdrs => context.PullHdrs.Include(ph => ph.PullItems);// req'd by interface
 
         public Dictionary<int, string> PullOrders => MakePullOrders();// req'd by interface
-
-        public EFPullHdrRepository(ApplicationDbContext ctx) // -----------------------------------
+       
+        public EFPullHdrRepository(ApplicationDbContext ctx) // constructor -----------------------
         {
             context = ctx;
 
         } // eo EFPullHdrRepository constructor ---------------------------------------------------
+
 
         Dictionary<int, string> MakePullOrders() // -----------------------------------------------
         {
@@ -41,8 +42,8 @@ namespace SHTWIMS02.Areas.Pull.Models
             return phDict;
         } // eo MakePullOrders --------------------------------------------------------------------
         
-        
-        public void SavePullHdr(PullHdr pullHdr) // -----------------------------------------------
+               
+        public void SavePullHdr(PullHdr pullHdr) // ----------------------------------------------
         {
             //SaveChanges is a method of DbContext class inherited by ApplicationDbContext class
             // located in the Models folder of the base program
@@ -72,5 +73,6 @@ namespace SHTWIMS02.Areas.Pull.Models
             context.SaveChanges();
         } // eo SavePullHdr method ----------------------------------------------------------------
 
+        
     } // eo EFPullHdrRepository class -------------------------------------------------------------
 } // eo namespace
