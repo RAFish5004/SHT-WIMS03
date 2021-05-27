@@ -111,6 +111,12 @@ img {
     padding-left:1.2rem;
 }
 
+/*  ----------------- color rules ------------------------   */
+
+
+
+}
+
 /* ----------------form related style rules------------      */
 
 
@@ -185,6 +191,37 @@ textarea {
     height: 5em;
 }
 
+
+/* ---------------------  Menu related rules -------------------- */
+
+
+
+.menuItem {    
+    border-radius: 0.4rem;
+    margin: 0.6rem 1.0rem;
+    padding: 0.3rem;
+    font-size: 1.8rem;   
+}
+
+.menuHide {
+    display: none;
+}
+
+/* buttons included in each menu item  */
+.menuItem > button {
+    float: right;
+    right: 0;
+    height: 2rem;
+    width: 3rem;    
+    border-radius: 0.3rem;
+}
+
+.menuItem:hover .menuHide {
+    display: block;
+
+    font-size: 1.5rem;
+    
+}
 
 /* ----------------- Field Validation styles ------------------  */
 

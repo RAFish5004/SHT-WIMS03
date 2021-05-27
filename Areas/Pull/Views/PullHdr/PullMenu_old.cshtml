@@ -1,0 +1,61 @@
+﻿@*
+   PullMenu.cshtml, 210405
+    Author: Russell Fisher
+    Comment:  create a simple landing point to service requests dealing with pulls on inventory
+
+    url path = /Pull/PullHdr/PullMenu
+*@
+@{
+
+    ViewData["Title"] = "Pull Menu";
+    ViewData["pageTitle"] = "Inventory Pull Options";
+    Layout = "_Layout-Pull";
+}
+
+<body>
+    <div> <!-- this div element is the CSS target for general formatting and layout -->
+        <!-- Pull Menu as unordered list -->
+        <form>
+            <fieldset>
+                <legend>What do you want to do?</legend>
+
+                <ul style="list-style-type:none">
+
+                    <li>
+                        <p>
+                            <a asp-area=""  asp-controller="Cart" asp-action="Index"> Open a Pull Order </a>
+                            
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <label for="regPull" id="regPull"> Pull from inventory</label>
+                            <input type="submit" id="regPull" name="regPull">
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <label for="showPull" id="showPull"> Show contents of Pull order</label>
+                            <input type="button" id="shewPull" name="showPull">
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <a href="#">Show List of Pull Orders</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a asp-area="Pull" asp-controller="PullAdmin" asp-action="PullSelect"  ></a>
+                        </p>
+                    </li>
+
+                </ul>
+            </fieldset>
+
+        </form>
+    </div>
+</body>

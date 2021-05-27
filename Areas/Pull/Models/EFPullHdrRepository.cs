@@ -21,7 +21,7 @@ namespace SHTWIMS02.Areas.Pull.Models
 
         public Dictionary<int, string> PullOrders => MakePullOrders();// req'd by interface
 
-        public EFPullHdrRepository(ApplicationDbContext ctx) // -----------------------------------
+        public EFPullHdrRepository(ApplicationDbContext ctx) // contstructor ---------------------
         {
             context = ctx;
 
@@ -39,6 +39,7 @@ namespace SHTWIMS02.Areas.Pull.Models
             }
 
             return phDict;
+
         } // eo MakePullOrders --------------------------------------------------------------------
         
         

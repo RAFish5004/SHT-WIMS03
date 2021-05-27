@@ -1,0 +1,32 @@
+﻿/* 
+    pullColors.css, 210527 
+    Author: Russell Fisher
+    - enable a color scheme for Pull related views
+*/
+
+body {
+    background-color: rgb(240,250,240);
+}
+
+.menuBackground {
+    background-color: rgb(240,250,240)
+}
+
+.menuItem {
+    border: 2px solid darkGreen;
+    color: darkgreen;
+    background-color: rgb(230,250,230);
+}
+
+.menuItem > button {
+    border: 2px solid black;
+    background-color: rgb(200,250,200);
+}
+
+.menuItem:hover .hide {
+    color: rgb(155,125,50);
+}
+
+#scrollList {
+    background-color: lavenderblush;
+}
