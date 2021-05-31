@@ -19,7 +19,7 @@
     <div>
         <h2> @ViewBag.AmPm  Welcome to Sam Houston Territory Inventory Management System </h2>
 
-        <a asp-action="CiScrollList">Click to view Item List</a><br />
+        <a asp-action="CiFilteredScrollList">Click to view Item List</a><br />
 
 
         <!-- make an input box and send results to ICListFilter action method in HomeController -->
@@ -27,7 +27,7 @@
             <div class="form-actions">
                 <p>
                     Find by name: <input type="text" name="searchString" value="@ViewData["fltDescr"]" />
-                    <input type="submit" value="Search" class="btn btn-default" />
+                    <input type="submit" value="Search" />
 
                 </p>
             </div>

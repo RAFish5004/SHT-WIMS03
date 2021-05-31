@@ -43,16 +43,6 @@ namespace SHTWIMS02.Controllers
         } // eo CatalogMenu method ----------------------------------------------------------------
 
 
-        public ViewResult CiScrollList() // -------------------------------------------------------
-        {
-            
-               return View(repository.CatalogItems.OrderBy(p => p.Description));
-            
-
-        }// eo ScrollList action method -----------------------------------------------------------      
-
-        
-
         public IActionResult SearchString() // ----------------------------------------------------
         {
             // this is a simple reduced list of items

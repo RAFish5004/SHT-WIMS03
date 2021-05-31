@@ -10,8 +10,9 @@
 @model Dictionary<int,string>
 
 @{
-    ViewData["Title"] = "Pull Menu";
-    ViewData["pageTitle"] = "Inventory Pull Options";
+    ViewData["Title"] = "Pull Select";
+    ViewData["pageTitle"] = "Edit Pull Order";
+    Layout = "_Layout-Pull";    
 }
 
 <div>
@@ -24,7 +25,7 @@
             <option disabled selected value="">Select a Pull Order to edit</option>
                 @foreach (var pull in Model)
                 {
-                    <option class="text-dark" value="@pull.Key">@pull.Value</option>
+                    <option value="@pull.Key">@pull.Value</option>
                 }
             }
         </select>

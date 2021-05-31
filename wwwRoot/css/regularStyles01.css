@@ -4,6 +4,10 @@
     - see: https://www.w3schools.com/cssref/css_selectors.asp
     - see: https://www.w3schools.com/Css/css_margin.asp
     - selectors: https://www.w3schools.com/cssref/css_selectors.asp
+
+
+/*  Red Cross Red: rgb(237,27,46)   */
+
 	
 */
 
@@ -21,8 +25,8 @@ h2 {
     color: blue;
 }
 
-body
-{
+body {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
 
@@ -49,14 +53,7 @@ html {
     background-color: rgb(100,100,100);
     max-height: 45rem;
 }
-.regContainer {
-    max-width: 62.5rem;
-    display: grid;
-    grid-template-columns: repeat(12, minmax(50px,100px));
-    grid-template-rows: repeat(8, minmax(80px,1fr));
-    grid-gap: 0.625rem;
-    background-color: rgb(220, 190, 190);
-}
+
 
 body {
     width: 90%;
@@ -106,15 +103,17 @@ img {
 #scrollList {
     height:25rem; 
     width:44rem; 
-    overflow:auto; 
-    background-color:lavenderblush; 
+    overflow:auto;     
     padding-left:1.2rem;
 }
 
-/*  ----------------- color rules ------------------------   */
-
-
-
+.regContainer {
+    max-width: 62.5rem;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(50px,100px));
+    grid-template-rows: repeat(8, minmax(80px,1fr));
+    grid-gap: 0.625rem;
+    background-color: rgb(220, 190, 190);
 }
 
 /* ----------------form related style rules------------      */
@@ -133,15 +132,27 @@ img {
     height: 2.5rem;
 }
 
-form {    
+form {
     margin: 0rem auto;
     border: 2px dotted aliceblue;
-    max-width: 40rem; /* 640px */
-    overflow:auto; /* enforce scroll bars */
+    max-width: 50rem; /* 800px */
+    overflow: auto; /* enforce scroll bars */
 }
 
+select > option {
+  font-size: 1.0rem;
+}
+
+/* ---------- Table ------------- */
+
 table {
-    margin: 1rem auto;
+   
+    margin: 0.5rem auto;
+}
+
+tr {
+    font-size: 0.8rem;
+    margin: 0.25rem 0rem;
 }
 
 .tableItem-gradient {
@@ -150,6 +161,13 @@ table {
     background: linear-gradient(rgb(190,250,190),rgb(210,210,250));
 }
 
+caption {
+    font-size: 1.2rem;
+    font-weight: 600;    
+    padding: 0.5rem 0rem;
+}
+
+/* ------------------- List ----------------  */
 fieldset {
     border-color: red;
     border-radius: 0.5em;
@@ -193,8 +211,6 @@ textarea {
 
 
 /* ---------------------  Menu related rules -------------------- */
-
-
 
 .menuItem {    
     border-radius: 0.4rem;
