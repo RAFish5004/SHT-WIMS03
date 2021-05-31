@@ -1,5 +1,6 @@
-﻿
+
 // ========================================================
+
 // PullHdrListViewModel.cs, 210421
 // Author: Russell Fisher
 // - this view model carries a copy of the PullHdr repo
@@ -15,7 +16,9 @@ using SHTWIMS02.Areas.Pull.Controllers;
 using SHTWIMS02.Areas.Pull.Models;
 
 
+
 namespace SHTWIMS02.Pull.Models
+
 {
     public class PullHdrListViewModel // ----------------------------------------------------------
     {
@@ -24,11 +27,13 @@ namespace SHTWIMS02.Pull.Models
         private ICatalogItemRepository ciRepo;
         static Dictionary<string, string> catItemKVP;
 
+
         public ICatalogItemRepository CatItems
         {
             get { return ciRepo; }
            
         }
+
 
         public IPullHdrRepository PullHdrs
         {
@@ -41,7 +46,6 @@ namespace SHTWIMS02.Pull.Models
             get { return catItemKVP; }
         }
 
-
         public PullHdrListViewModel(IPullHdrRepository repo, ICatalogItemRepository repo2) // -----
         {
             phRepo = repo;
@@ -51,8 +55,6 @@ namespace SHTWIMS02.Pull.Models
         } // eo constructor -----------------------------------------------------------------------
 
 
-
-
-
     } //eo PullHdrListViewModel class -------------------------------------------------------------
 } // eo namespace
+

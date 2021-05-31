@@ -16,5 +16,7 @@ namespace SHTWIMS02.Areas.Locate.Models
     {
          public IQueryable<County> Counties { get; }
 
+         public Dictionary<string,string> CountyKVP {get;} // Key as FIPS code, Value as name
+
     } // eo ICountyRepository interface -----------------------------------------------------------
 } // eo namespace

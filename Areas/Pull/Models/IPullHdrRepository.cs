@@ -14,6 +14,6 @@ namespace SHTWIMS02.Areas.Pull.Models
         public Dictionary<int, string> PullOrders { get; }
        
         void SavePullHdr(PullHdr pullHdr);
-       
+
     } // eo IPullHdrsRepository -------------------------------------------------------------------
 } // eo namespace
