@@ -1,0 +1,53 @@
+﻿@*
+    PullItemDisplay.cshtml, 210519
+    - display PullItem returned from PullDisplay.cshtml view
+      to enable editing of a PullHdr.PullItems PullItem object.
+    - source controller = PullAdmin, source action=PullItemDisplay
+*@
+@{
+    ViewData["Title"] = "Pull Item";
+    ViewData["pageTitle"] = "Pull Item Edit Form";
+}
+
+@model PullItem
+
+<div>
+    <form method="post">
+        <div>
+            <label asp-for="PullItemId"></label>
+            <input asp-for="PullItemId" readonly />
+        </div>
+        <div>
+            <label asp-for="ItemId" class="formLabel"></label>
+            <input asp-for="ItemId" class="formInput" />
+        </div>
+        <div>
+            <label class="formLabel">Description</label>
+            <span style="border:1px solid grey; background:white; width:14rem;">@ViewBag.Description</span>
+        </div>
+        <div>
+            <label asp-for="UoM" class="formLabel"></label>
+            <input asp-for="UoM" class="formInput" />
+        </div>
+
+        <div>
+            <label asp-for="QtyRequested" class="formLabel"></label>
+            <input asp-for="QtyRequested" class="formInput" />
+        </div>
+            
+        <div>
+            <label asp-for="QtyShipped" class="formLabel"></label>
+            <input asp-for="QtyShipped" class="formInput" />
+        </div>
+
+        <div>
+            <label asp-for="DateNeeded" class="formLabel"></label>
+            <input asp-for="DateNeeded" class="formInput" />
+        </div>
+
+        <div>
+            <label asp-for="Comment" class="formLabel"></label>
+            <input asp-for="Comment" class="formInput" />
+        </div>
+    </form>
+</div>

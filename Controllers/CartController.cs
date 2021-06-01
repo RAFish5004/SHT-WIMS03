@@ -1,7 +1,7 @@
 ﻿// ========================================================
 // CartController.cs, rev 201106
 // Author: Russell Fisher
-// 
+//  routed from 
 // ========================================================
 
 
@@ -39,8 +39,8 @@ namespace Areas.SHTWIMS02.Controllers
 
         public ViewResult CiListFiltered(string filterString) // ----------------------------------     
         {
-
-            // filler object is a place holder for the first item in the filtered list
+            // this method creates a list based on the incoming filterString parameter
+            // - first item is filler object is a place holder for the first item in the filtered list
             CatalogItem filler = new CatalogItem { ItemId = "filler", Description = "Select an item", UoM = "ea" };
             List<CatalogItem> items = new List<CatalogItem>(); // holds search result
 
@@ -107,10 +107,9 @@ namespace Areas.SHTWIMS02.Controllers
 
         } // eo AddToCart method ------------------------------------------------------------------
 
-        public ViewResult CartIndex(string returnUrl) // p 267 ----------------------------------------
-        //public ViewResult CartIndex()
-        {
-            // CartIndexViewModel 
+        public ViewResult CartIndex(string returnUrl) // p 267 ----------------------------------------      
+        {            
+            // View delcares a new CartIndexViewModel and initializes it
             return View(new CartIndexViewModel
             {
                 Cart = cart,

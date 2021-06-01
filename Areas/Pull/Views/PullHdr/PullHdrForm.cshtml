@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Pull Header";
     ViewData["pageTitle"] = "Pull Header Form";
+    Layout = "_Layout-Pull";
 }
 
 @model SHTWIMS02.Areas.Pull.Models.PullHdr
@@ -31,6 +32,24 @@
                 <input class="formInput" asp-for="LocationId" />
             </li>
             <li>
+                <label class="formLabel" asp-for="PullDate"></label>
+                <input class="formInputDate" type="date" asp-for="PullDate" />
+            </li>
+            <li>
+                <label class="formLabel" asp-for="Destination"></label>
+                <input class="formInput" asp-for="Destination" />
+            </li>
+
+            <li>
+                <!-- p773 -->
+                <label class="formLabel">Order Status</label>
+                <select asp-for="Status"
+                        asp-items="@new SelectList(Enum.GetNames(typeof(StatusTerms)))">
+                    <option selected value="Open"></option>
+                </select>
+            </li>
+
+            <li>
                 <label class="formLabel" asp-for="Requester"></label>
                 <input class="formInput" asp-for="Requester" />
             </li>
@@ -45,28 +64,13 @@
             </li>
 
             <li>
-                <label class="formLabel" asp-for="PullDate"></label>
-                <input class="formInputDate" type="date" asp-for="PullDate" />
-            </li>
-            <li>
-                <label class="formLabel" asp-for="Destination"></label>
-                <input class="formInput" asp-for="Destination" />
-            </li>
-            <li>
                 <label class="formLabel" asp-for="Comment"></label>
                 <input class="formComment" asp-for="Comment" />
             </li>
+
             <li>
-                <label class="formLabel">Order Status</label>
-                <select asp-for="Status">
-                    <option value="open">Open</option>
-                    <option value="partial">Partial</option>
-                    <option value="closed">Closed</option>
-                </select>
+                <input class="btn btn-primary" type="submit" value="Complete Order" />
             </li>
-                <li>
-                    <input class="btn btn-primary" type="submit" value="Complete Order" />
-                </li>
         </ul>
     </form>
 </body>

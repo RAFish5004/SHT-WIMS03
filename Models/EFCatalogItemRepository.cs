@@ -12,14 +12,17 @@ namespace SHTWIMS02.Models
     public class EFCatalogItemRepository : ICatalogItemRepository // ------------------------------  
     {
         private ApplicationDbContext context;
-
+       
         // constructor
         public EFCatalogItemRepository(ApplicationDbContext ctx) // -------------------------------
         {
             context = ctx;
+            
+            
         } // eo EFCatalogItemRepository constructor -----------------------------------------------
 
-        // satisfy rqmt for CatalogIitemRepository, CatalogItems is referenced in ApplicationDbContext
+
+        // satisfy rqmt for ICatalogIitemRepository
         public IQueryable<CatalogItem> CatalogItems => context.CatalogItems;
         public List<string> Categories => this.ItemCategories();
         public Dictionary<string, string> CatItemKVP => this.MakeDictionary();       

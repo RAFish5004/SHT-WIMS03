@@ -12,14 +12,27 @@ using SHTWIMS02.Models;
 namespace SHTWIMS02.Controllers
 {
     public class CatalogItemController : Controller // --------------------------------------------
-    {
-        public static Dictionary<string, CatalogItem> CatItemKVP;
+    {     
         private ICatalogItemRepository repository;
+        private List<string> catalogCategories;
+     
+        
+        
+        // properties
+        public List<string> CatalogCategories {
 
+            get{
+                return catalogCategories;
+            }
+        } // eo property -------------------------
+        
+       
+
+
+        // Constructor, one parameter
         public CatalogItemController(ICatalogItemRepository repo) // ------------------------------
         {
-            repository = repo;
-            MakeDictionary(); // create 
+            repository = repo;            
 
         } // eo constructor -----------------------------------------------------------------------
 
@@ -29,26 +42,6 @@ namespace SHTWIMS02.Controllers
         
         } // eo CatalogMenu method ----------------------------------------------------------------
 
-
-        public ViewResult CiScrollList() // -------------------------------------------------------
-        {
-            
-               return View(repository.CatalogItems.OrderBy(p => p.Description));
-            
-
-        }// eo ScrollList action method -----------------------------------------------------------      
-
-        Dictionary<string, CatalogItem> MakeDictionary() // ---------------------------------------
-        {
-            CatItemKVP = new Dictionary<string, CatalogItem>();
-            
-            foreach (CatalogItem ci in repository.CatalogItems.ToArray())
-            {
-                CatItemKVP.Add(ci.ItemId, ci);
-            }
-
-            return CatItemKVP; 
-        } // eo MakeDictionary method -------------------------------------------------------------
 
         public IActionResult SearchString() // ----------------------------------------------------
         {
@@ -75,10 +68,12 @@ namespace SHTWIMS02.Controllers
                     }
                 }
             }
+            
             return View(items);
 
         } // eo CiSelectList method ---------------------------------------------------------------
 
+      
 
     } // eo CatalogItemController class -----------------------------------------------------------
 } // eo namespac

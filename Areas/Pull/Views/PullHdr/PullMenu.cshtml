@@ -1,52 +1,52 @@
 ﻿@*
-   PullMenu.cshtml, 210405
-    Author: Russell Fisher
-    Comment:  create a simple landing point to service requests dealing with pulls on inventory
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
+@*
+     PullMenu.cshtml, 210527
+     Author: Russell Fisher
+     Comment: update to a simple landing point to service requests dealing with pulls on inventory
 
+    url path = / Pull / PullHdr / PullMenu
+
+*@
+
+@{
     ViewData["Title"] = "Pull Menu";
     ViewData["pageTitle"] = "Inventory Pull Options";
+    Layout = "_Layout-Pull";
 }
 
-<body>
-    <div> <!-- this div element is the CSS target for general formatting and layout -->
-        <!-- Pull Menu as unordered list -->
-        <form>
-            <fieldset>
-                <legend>What do you want to do?</legend>
+    <!--this is the first div element inside the Body element-->
+    <div class="pullMenuBackground">
 
-                <ul style="list-style-type:none">
+    <h2>Main Pull Menu</h2>
 
-                    <li>
-                        <p>
-                            <a asp-area=""  asp-controller="Cart" asp-action="Index"> Open a Pull Order </a>
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            <label for="regPull" id="regPull"> Pull from inventory</label>
-                            <input type="submit" id="regPull" name="regPull">
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            <label for="showPull" id="showPull"> Show contents of Pull order</label>
-                            <input type="button" id="shewPull" name="showPull">
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            <a href="#">Show List of Pull Orders</a>
-                        </p>
-                    <li>
-
-                </ul>
-            </fieldset>
-
-        </form>
+    <div class="menuItem">
+        New Pull Order
+        <button asp-area="Pull" asp-controller="Cart" asp-action="Index"  >Go</button>
+        <div class="menuHide">Request some supplies from Disaster Field Supply Center (DFSC) </div>
     </div>
-</body>
+
+
+    <div class="menuItem">
+        Pull Order List
+        <button>Go</button>
+
+        <div class="menuHide">See a list of recent Pull Orders from your location</div>
+    </div>
+
+
+    <div class="menuItem">
+        Print Pull Item List
+        <button>Go</button>
+        <div class="menuHide">Print a list of items for a single Pull Order</div>
+    </div>
+
+
+    <div class="menuItem">
+        Catalog
+        <button>Go</button>
+        <div class="menuHide">See a scroll list of catalog items</div>
+    </div>
+
+</div>

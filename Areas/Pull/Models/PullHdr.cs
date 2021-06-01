@@ -2,6 +2,7 @@
 // PullHdr.cs, 200905
 // Author: Russell Fisher
 // modelled after ASPMVC p 257
+// see: DisplayFormatAttribute Class for date formatting help
 // ========================================================
 
 using System;
@@ -20,12 +21,16 @@ namespace SHTWIMS02.Areas.Pull.Models
     public partial class PullHdr  // ----------------------------------------------------------------------
     {
         //private List<Pullitem> pullitems => PullItems;
+        private string pullDate;
+      
 
         public PullHdr() // -----------------------------------------------------------------------
         {
             this.PullDate = DateTime.Today;
+            //pullDate = DateTime.Today.ToShortDateString();
+            pullDate = DateTime.Today.ToString();
             this.PullItems = new List<PullItem>();
-            
+            this.Status = "Open";  // default to Open
         }// default constructor -------------------------------------------------------------------
 
         // ensure that PullHdrId is null by default
@@ -36,34 +41,33 @@ namespace SHTWIMS02.Areas.Pull.Models
         // Add Phone for requester
         // Add an email address for requester, see RegExp on p 40
 
-        [BindNever]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[BindNever]
         public int PullHdrId { get; set; }
         
-        [BindNever] // p 295
         public string Status { get; set; }
 
         [ForeignKey("LocationId")]
         [Required(ErrorMessage = "Please select a Location")]
         public string LocationId { get; set; }
-        [Required(ErrorMessage = "Please enter today's date")]
-        public DateTime PullDate { get; set; }
 
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Please enter a valid date")]
+        public DateTime PullDate { get; set; }
+                    
         [Required(ErrorMessage = "Where is this Pull order going?")]
         public string Destination { get; set; }
      
         [Required(ErrorMessage = "Who requested this Pull order? ")]
         public string Requester { get; set; }
+
         public string ReqPhone { get; set; }
+
         public string ReqEmail { get; set; }
+
         public string Comment { get; set; }
 
-
-        //public ICollection<PullItem> PullItems { get; set; }
-
-        // this virtual navigation property is critical to relationship
-        //public virtual ICollection<CartLine> CartLines { get; set; }
-        
         public virtual ICollection<PullItem> PullItems { get; set; }
 
     } //eo PullHdr class --------------------------------------------------------------------------

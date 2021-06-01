@@ -1,0 +1,107 @@
+﻿@*
+    PullDisplay.cshtml, 210512
+    Author: Russell Fisher
+     shows PullHdr retrieved from repo for  editing.
+    
+    url path: /PullAdmin/PullSelect => /PullAdmin/PullDisplay
+
+*@
+
+@model PullDisplayViewModel
+
+@{
+
+    ViewData["Title"] = "PullDisplay";
+    ViewData["pageTitle"] = "Pull Display Form";
+    Layout = "_Layout-Pull";
+}
+
+<div>
+    <form method="post" asp-action="PullHdrChanged">
+
+        <!--
+    <input type="hidden" asp-for="PHdr.PullHdrId" value="@Model.PHdr.PullHdrId" />
+        -->
+
+        <div>
+            <label ty asp-for="PHdr.PullHdrId" class="formLabel"></label>
+            <input asp-for="PHdr.PullHdrId" class="formInput" readonly />
+        </div>
+
+        <div>
+            <label asp-for="PHdr.LocationId" class="formLabel"></label>
+            <input asp-for="PHdr.LocationId" class="formInput" readonly />
+        </div>
+        <div>
+            <label asp-for="PHdr.PullDate" class="formLabel">Pull Date</label>
+            <input asp-for="PHdr.PullDate" class="formInput" readonly />
+        </div>
+        <div>
+            <label asp-for="PHdr.Destination" class="formLabel"></label>
+            <input asp-for="PHdr.Destination" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.Requester" class="formLabel"></label>
+            <input asp-for="PHdr.Requester" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.ReqPhone" class="formLabel"></label>
+            <input asp-for="PHdr.ReqPhone" class="formInput" />
+        </div>
+        <div>
+            <label asp-for="PHdr.ReqEmail" class="formLabel"></label>
+            <input asp-for="PHdr.ReqEmail" class="formInput" />
+        </div>
+        <li>
+            <!-- p773 -->
+            <label asp-for="PHdr.Status" class="formLabel"></label>
+            <select asp-for="PHdr.Status"
+                    asp-items="@new SelectList(Enum.GetNames(typeof(StatusTerms)))">
+                <option selected value="Open"></option>
+            </select>
+        </li>
+        <div>
+            <label asp-for="PHdr.Comment" class="formLabel"></label>
+            <input asp-for="PHdr.Comment" class="formComment" />
+        </div>
+        <table>
+            <colgroup>
+                <col style='width:10rem;'>
+                <col style='width:40rem;'>
+                <col style='width:5rem;'>
+                <col style='width:5rem;'>
+                <col style='width:20rem;'>
+                <col style='width:5rem;'>
+
+            </colgroup>
+
+            <caption>Pull Item List</caption>
+            <tr>
+            <th>Item Id</th><th>Description</th><th>UoM</th><th>Qty</th><th> Comment </th> <th>&nbsp;</th>  
+            </tr>
+
+            @foreach (PullItem pitem in @Model.PHdr.PullItems)
+            {
+                <tr>
+                    <td>@pitem.ItemId</td>
+                    <td>@Model.CIKVP[pitem.ItemId]</td>
+                    <td>@pitem.UoM</td>
+                    <td>@pitem.QtyRequested</td>
+                    <td>@pitem.Comment</td>
+                    <!-- p 250 -->
+                    <td>
+                        <a class="btn btn-block btn-secondary"
+                           asp-action="PullItemDisplay"
+                           asp-controller="PullAdmin"
+                           asp-route-PullHdrId="@pitem.PullHdr"
+                           asp-route-PullItemId="@pitem.PullItemId">Edit</a>
+                    </td>
+                </tr>
+            }
+            <tr></tr>
+        </table>
+
+        <input class="btn btn-primary" type="submit" value="Submit Changes" />
+    </form>
+
+</div>

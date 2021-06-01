@@ -34,7 +34,8 @@ namespace SHTWIMS02.Areas.Receive.Models
         [ForeignKey("LocationId")]
         [Required(ErrorMessage = "Please select a Location")]
         public string LocationId { get; set; }
-        
+
+        [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please enter today's date")]
         public DateTime ReceiveDate { get; set; }
 

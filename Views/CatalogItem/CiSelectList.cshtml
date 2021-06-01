@@ -2,7 +2,8 @@
     /CatalogItem/Index.cshtml 
 
      shows welcome message with ViewData["Title"] and foreach loop for the list view of all CatalogItems
-     For the SearchList box see this URL
+     For the SearchList  
+        URL  redirects to /Views/Cart/CiScrollList
 
 *@
 @model IEnumerable<CatalogItem>
@@ -18,7 +19,7 @@
     <div>
         <h2> @ViewBag.AmPm  Welcome to Sam Houston Territory Inventory Management System </h2>
 
-        <a asp-action="CiScrollList">Click to view Item List</a><br />
+        <a asp-action="CiFilteredScrollList">Click to view Item List</a><br />
 
 
         <!-- make an input box and send results to ICListFilter action method in HomeController -->
@@ -26,7 +27,7 @@
             <div class="form-actions">
                 <p>
                     Find by name: <input type="text" name="searchString" value="@ViewData["fltDescr"]" />
-                    <input type="submit" value="Search" class="btn btn-default" />
+                    <input type="submit" value="Search" />
 
                 </p>
             </div>

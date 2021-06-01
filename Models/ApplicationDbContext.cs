@@ -26,7 +26,9 @@ namespace SHTWIMS02.Models
     public class ApplicationDbContext : DbContext // ----------------------------------------------
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        { 
+        {
+            var ops = options;
+
         } // eo ApplicationDbContext constructor --------------------------------------------------
 
         public DbSet<CatalogItem> CatalogItems { get; set; }

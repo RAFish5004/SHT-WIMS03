@@ -4,6 +4,10 @@
     - see: https://www.w3schools.com/cssref/css_selectors.asp
     - see: https://www.w3schools.com/Css/css_margin.asp
     - selectors: https://www.w3schools.com/cssref/css_selectors.asp
+
+
+/*  Red Cross Red: rgb(237,27,46)   */
+
 	
 */
 
@@ -21,8 +25,8 @@ h2 {
     color: blue;
 }
 
-body
-{
+body {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
 
@@ -49,14 +53,7 @@ html {
     background-color: rgb(100,100,100);
     min-height:fit-content();
 }
-.regContainer {
-    max-width: 62.5rem;
-    display: grid;
-    grid-template-columns: repeat(12, minmax(50px,100px));
-    grid-template-rows: repeat(8, minmax(80px,));
-    grid-gap: 0.625rem;
-    background-color: rgb(220, 190, 190);
-}
+
 
 body {
     width: 90%;
@@ -67,11 +64,10 @@ body {
 }
 /* refine main body div for general appearance */
     body > div {
-        border: 2px dotted green;
-        min-height: 25rem;
-        max-height: 32rem;
-        margin: 0.625rem;       
-        overflow: auto;
+        border: 2px dotted green
+        min-height: 28rem;
+        margin: 0.625rem;        
+
     }
 
 header,
@@ -105,24 +101,60 @@ img {
     height: 5rem;
 }
 
-#scrollList {    
-    margin: auto;
+#scrollList {
+    height:25rem; 
+    width:44rem; 
     overflow:auto; 
     background-color:lavenderblush; 
     padding-left:1.2rem;
 }
 
-/* ----------------form related style rules------------      */
-
-form {    
-    margin: 0rem auto;
-    border: 2px dotted aliceblue;
-    max-width: 40rem; /* 640px */
-    overflow:auto; /* enforce scroll bars */
+.regContainer {
+    max-width: 62.5rem;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(50px,100px));
+    grid-template-rows: repeat(8, minmax(80px,1fr));
+    grid-gap: 0.625rem;
+    background-color: rgb(220, 190, 190);
 }
 
+/* ----------------form related style rules------------      */
+
+
+.formLabel {
+    width: 8rem;
+}
+
+.formInput {
+    width: 14rem;
+}
+
+.formComment {
+    width: 20rem;
+    height: 2.5rem;
+}
+
+form {
+    margin: 0rem auto;
+    border: 2px dotted aliceblue;
+    max-width: 50rem; /* 800px */
+    overflow: auto; /* enforce scroll bars */
+}
+
+select > option {
+  font-size: 1.0rem;
+}
+
+/* ---------- Table ------------- */
+
 table {
-    margin: 1rem auto;
+   
+    margin: 0.5rem auto;
+}
+
+tr {
+    font-size: 0.8rem;
+    margin: 0.25rem 0rem;
 }
 
 .tableItem-gradient {
@@ -131,11 +163,16 @@ table {
     background: linear-gradient(rgb(190,250,190),rgb(210,210,250));
 }
 
+caption {
+    font-size: 1.2rem;
+    font-weight: 600;    
+    padding: 0.5rem 0rem;
+}
 
-
+/* ------------------- List ----------------  */
 fieldset {
     border-color: red;
-    border-radius: 1em;
+    border-radius: 0.5em;
 }
 
 
@@ -174,14 +211,63 @@ textarea {
     height: 5em;
 }
 
-/* ---------------- eo form related style rules -----------      */
 
+/* ---------------------  Menu related rules -------------------- */
+
+.menuItem {    
+    border-radius: 0.4rem;
+    margin: 0.6rem 1.0rem;
+    padding: 0.3rem;
+    font-size: 1.8rem;   
+}
+
+.menuHide {
+    display: none;
+}
+
+/* buttons included in each menu item  */
+.menuItem > button {
+    float: right;
+    right: 0;
+    height: 2rem;
+    width: 3rem;    
+    border-radius: 0.3rem;
+}
+
+.menuItem:hover .menuHide {
+    display: block;
+
+    font-size: 1.5rem;
+    
+}
+
+/* ----------------- Field Validation styles ------------------  */
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-error {
+    display: none;
+}
+
+.field-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
 
 /* ---------------- Bootstrap 4.4.1 styles ----------------      */
 
 /* buttons */
-
-
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -443,6 +529,7 @@ fieldset:disabled a.btn {
         background-color: #343a40;
         border-color: #343a40;
     }
-
+    
+/* ------------- Field Validation classes ----------- */
 
 /* ---------------- eo Bootstrap 4.4.1 styles ------------      */

@@ -10,8 +10,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SHT_WIMS02.Areas.Admin.Controllers
+namespace SHTWIMS02.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class AdminController : Controller  // -------------------------------------------------
     {
         public AdminController() // ---------------------------------------------------------------

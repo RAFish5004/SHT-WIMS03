@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SHTWIMS02.Models;
-using SHTWIMS02.Areas.Locate.Models;
+//using SHTWIMS02.Areas.Locate.Models;
 
 namespace SHTWIMS02.Areas.Locate.Models
 {
@@ -25,7 +25,7 @@ namespace SHTWIMS02.Areas.Locate.Models
         } // eo EFCountyRepository constructor -----------------------------------------------
 
         // satisfy rqmt for ICountyRepository, Counties is referenced in ApplicationDbContext
-        public IQueryable<County> Counties => context.Counties;
+        //public IQueryable<County> Counties => context.Counties;
 
 
     } // eo EFCountyRepository --------------------------------------------------------------------

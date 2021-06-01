@@ -23,13 +23,12 @@ namespace SHTWIMS02.Areas.Count.Models
         [BindNever]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CountHdrId { get; set; }
-
-        [BindNever]
+       
         [ForeignKey("LocationId")]
         public string LocationId { get; set; }
 
-
-        [Required(ErrorMessage = "Please enter today's date")]
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Please enter the date the count was made")]
         public DateTime CountDate { get; set; }
         public string CountBy { get; set; }
         public string Comment { get; set; }

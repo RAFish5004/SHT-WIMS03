@@ -39,21 +39,26 @@ namespace SHTWIMS02.Areas.Pull.Models
             // PullHdrId set by db
             this.ItemId = cl.ItemId;
             this.UoM = cl.UoM;
-            this.QtyRequested = cl.Qty;
+            this.QtyRequested = (int)cl.Qty;
             this.Comment = cl.Comment;
             this.DateNeeded = cl.DateNeeded;
 
         } // eo one parameter constructor ---------------------------------------------------------
 
-        [Key]
-        [BindNever]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PullItemId { get; set; }             
-        [BindNever]
+
+        //[BindNever]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[Key]
+        public int PullItemId { get; set; }
+        //[BindNever]
         [ForeignKey("PullHdrId")]
         public int PullHdrId { get; set; }
+        [Required]
+        [Range(minimum: 1, maximum: 5000, ErrorMessage = "Please enter a quantity greater than 1")]
         public int QtyRequested { get; set; }
         public int QtyShipped { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateNeeded { get; set; }
 
         // inherited from CountBase

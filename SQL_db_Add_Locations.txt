@@ -1,30 +1,6 @@
-﻿// ========================================================
-// Location.cs data type, 210316
-// Author: Russell Fisher
-
-// ========================================================
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SHTWIMS02.Areas.Locate.Models
-{
-    public class Location // ----------------------------------------------------------------------
-    {
-        public Location() // Controller -----------------------------------------------------------
-        { 
-            // empty for now
-        } // eo constructor -----------------------------------------------------------------------
-
-        // Validation attributes
-        // https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-5.0
-
-        [Key]
+[Key]
         [Required(ErrorMessage = "Please create an easy to remember location code, 10 characters or less")]
-        public string LocationId { get; set; } // max 12 char location code. unique, arbitrary
+        public string LocationId { get; set; } // max 10 char location code. unique, arbitrary
         [Required(ErrorMessage ="Please enter the name of the location")]                                               
         public string LocationName { get; set; } // mad 31 char
         [ForeignKey("CntyFIPS")]
@@ -47,5 +23,14 @@ namespace SHTWIMS02.Areas.Locate.Models
         public int Elev { get; set; }
         public string Comment { get; set; }
 
-    } // eo Location class ------------------------------------------------------------------------
-} // eo namespace
+use wims02;
+
+ 
+Insert into Locations
+Values( 'SHTO','Sam Houston Territory Office','??','WHSE','ARC','281-292-3906','339','322 Spring Hill Dr',' Suite  A-800','Spring','TX','77386','1','1','1',500,30.12186,-95.436581,114','Chapter office')
+
+Insert into Locations
+Values(  'HOUHQ','Harris County TGCR HQ','201','ARCHQ','ARC','713-999-1234','2700 Southwest Freeway',' ','Houston','TX','77098','1','1','1',3000,29.73115,-95.4201,54,'TGCR Main Office')
+
+Insert into Locations
+Values(  'Harlgn','South Texas Territory Office','061','ARCWhse','ARC','(953) 423-0523','6914 W. Expy 83',' ','Harlingen','TX','78552','1','1','1',800,26.187811,-97.762149,47,'South Texas Office and Warehouse')

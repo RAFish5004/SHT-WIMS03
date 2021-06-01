@@ -1,4 +1,10 @@
-﻿<!-- Regular layout as a general case -->
+﻿<!-- 
+    Pull layout incorporates the basic structure of Regular layout. 
+    - a separate layout for Pull Area allows a separate color scheme
+      by adding a unique css file folowing the regularStyles.css file
+      Color rules are moved from regularStyles.css to the 
+      while retaining the overall structure of the page
+-->
 
 <!DOCTYPE html>
 
@@ -15,11 +21,12 @@
     <link rel="stylesheet" asp-href-include="~/css/regularStyles01.css">
     <script defer src="~/js/openingScripts04.js"></script>
     <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <link rel="stylesheet" asp-href-include="~/css/pullColors.css">
     <title> @ViewData["Title"] </title>
 </head>
 
 <!--  ------------------ start Body --------------      -->
-<body class="pullMenuBackground">
+<body>
     <header>
         <img src="~/images/InvenIcon.png">
         <div>
@@ -27,7 +34,7 @@
         </div>
         <img src="~/images/ARCLogo01.jpg">
     </header>
-    
+
 
     <div>
         @RenderBody()
@@ -45,7 +52,9 @@
             </span>
         </div>
     </footer>
-</body> 
+</body>
 <!--   --------------- eo Body -------------------   -->
 
 </html>
+
+

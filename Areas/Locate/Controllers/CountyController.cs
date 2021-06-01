@@ -14,6 +14,7 @@ using SHTWIMS02.Areas.Locate.Models;
 
 namespace SHTWIMS02.Areas.Locate.Controllers
 {
+    [Area("Locate")]
     public class CountyController : Controller // -------------------------------------------------
     {
         public static Dictionary<string, string> CountyKVP;

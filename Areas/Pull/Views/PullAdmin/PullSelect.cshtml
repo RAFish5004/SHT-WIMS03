@@ -1,0 +1,33 @@
+﻿@*
+    PullSelect.cshtml, 210510
+    Authos: Russell Fisher
+    - display a list of pull summary strings Dictionary<int,string> to enable 
+      selecting a PullHdr object for editing
+    
+    url = /pullAdmin/pullselect
+
+*@
+@model Dictionary<int,string>
+
+@{
+    ViewData["Title"] = "Pull Select";
+    ViewData["pageTitle"] = "Edit Pull Order";
+    Layout = "_Layout-Pull";    
+}
+
+<div>
+    <a asp-action="Index">Back to Index</a>
+   
+    <label> Select a Pull Order for editing </label>
+    <form  asp-action="PullDisplay">
+        <select name="pullHdrId" onchange="{this.form.submit()}">
+            {
+            <option disabled selected value="">Select a Pull Order to edit</option>
+                @foreach (var pull in Model)
+                {
+                    <option value="@pull.Key">@pull.Value</option>
+                }
+            }
+        </select>
+    </form>
+</div>

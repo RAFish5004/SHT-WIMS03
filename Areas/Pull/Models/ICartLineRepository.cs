@@ -14,6 +14,5 @@ namespace SHTWIMS02.Areas.Pull.Models
     {
         IQueryable<CartLine> CartLines { get; }
 
-
     } // eo IPullItemRepository interface ---------------------------------------------------------
 } // eo namespace
