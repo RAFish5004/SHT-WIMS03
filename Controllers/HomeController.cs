@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SHTWIMS03.Controllers
 {
+    // minor change to test GitHub commit
     public class HomeController : Controller // ---------------------------------------------------
     {
         public IActionResult Index() // -----------------------------------------------------------
