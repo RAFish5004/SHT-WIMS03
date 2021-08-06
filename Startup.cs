@@ -1,5 +1,5 @@
 // ========================================================
-// SHTWIMS02.sln, 210309
+// SHTWIMS03.sln, 210309
 // Author: Russell Fisher
 // 
 // ========================================================
@@ -18,14 +18,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using SHTWIMS02.Models;
-using SHTWIMS02.Areas.Pull.Models;
-using SHTWIMS02.Areas.Receive.Models;
-using SHTWIMS02.Areas.Count.Models;
-using SHTWIMS02.Areas.Locate.Models;
+using SHTWIMS03.Models;
+using SHTWIMS03.Areas.Pull.Models;
+using SHTWIMS03.Areas.Receive.Models;
+using SHTWIMS03.Areas.Count.Models;
+using SHTWIMS03.Areas.Locate.Models;
 
 
-namespace SHTWIMS02
+namespace SHTWIMS03
 {
     public class Startup // -----------------------------------------------------------------------
     {

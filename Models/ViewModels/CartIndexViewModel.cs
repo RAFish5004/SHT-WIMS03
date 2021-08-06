@@ -8,10 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SHTWIMS02.Areas.Pull.Models;
+using SHTWIMS03.Areas.Pull.Models;
 
 
-namespace SHTWIMS02.Models.ViewModels
+namespace SHTWIMS03.Models.ViewModels
 {
     public class CartIndexViewModel // ------------------------------------------------------------
     {

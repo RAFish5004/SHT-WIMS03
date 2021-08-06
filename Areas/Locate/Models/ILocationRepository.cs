@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SHTWIMS02.Areas.Locate.Models
+namespace SHTWIMS03.Areas.Locate.Models
 {
     public class ILocationRepository // -----------------------------------------------------------
     {

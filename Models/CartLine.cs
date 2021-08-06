@@ -13,10 +13,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.Extensions.DependencyInjection; // reqd for GetService method
-using SHTWIMS02.Models;
-using SHTWIMS02.Areas.Pull.Models;
+using SHTWIMS03.Models;
+using SHTWIMS03.Areas.Pull.Models;
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS03.Models
 {
 
     public partial class CartLine // --------------------------------------------------------

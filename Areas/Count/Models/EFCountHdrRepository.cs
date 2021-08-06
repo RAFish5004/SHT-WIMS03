@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SHTWIMS02.Models;
+using SHTWIMS03.Models;
 
-namespace SHTWIMS02.Areas.Count.Models
+namespace SHTWIMS03.Areas.Count.Models
 {
     public class EFCountHdrRepository // ----------------------------------------------------------
     {

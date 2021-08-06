@@ -11,13 +11,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SHTWIMS02.Models; // enable ICatalogItemRepository
-using SHTWIMS02.Areas.Pull.Controllers;
-using SHTWIMS02.Areas.Pull.Models;
+using SHTWIMS03.Models; // enable ICatalogItemRepository
+using SHTWIMS03.Areas.Pull.Controllers;
+using SHTWIMS03.Areas.Pull.Models;
 
 
 
-namespace SHTWIMS02.Pull.Models
+namespace SHTWIMS03.Pull.Models
 
 {
     public class PullHdrListViewModel // ----------------------------------------------------------

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SHTWIMS02.Areas.Count
+namespace SHTWIMS03.Areas.Count
 {
     [Area("Count")]
     public class CountHdrController : Controller // -----------------------------------------------

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ComponentModel.DataAnnotations; //required to use validation attributes
 using System.ComponentModel.DataAnnotations.Schema; // reqd for DatabaseGenerated attribute
-using SHTWIMS02.Models;
+using SHTWIMS03.Models;
 using System.Security.Policy;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Runtime.CompilerServices;
 
-namespace SHTWIMS02.Areas.Count.Models
+namespace SHTWIMS03.Areas.Count.Models
 {
     public class CountHdr // ----------------------------------------------------------------------
     {

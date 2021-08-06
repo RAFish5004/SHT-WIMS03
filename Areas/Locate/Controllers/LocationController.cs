@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SHTWIMS02.Areas.Locate.Models;
+using SHTWIMS03.Areas.Locate.Models;
 
-namespace SHTWIMS02.Areas.Locate.Controllers
+namespace SHTWIMS03.Areas.Locate.Controllers
 {
     [Area("Locate")]
     public class LocationController : Controller // ----------------------------------------------

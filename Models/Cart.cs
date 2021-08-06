@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS03.Models
 {
     public class Cart // --------------------------------------------------------------------------
     {

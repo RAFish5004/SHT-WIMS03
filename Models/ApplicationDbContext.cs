@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.DependencyInjection;
-using SHTWIMS02.Models;
-using SHTWIMS02.Areas.Pull.Models;
-using SHTWIMS02.Areas.Locate.Models;
-using SHTWIMS02.Areas.Count.Models;
-using SHTWIMS02.Areas.Receive.Models;
+using SHTWIMS03.Models;
+using SHTWIMS03.Areas.Pull.Models;
+using SHTWIMS03.Areas.Locate.Models;
+using SHTWIMS03.Areas.Count.Models;
+using SHTWIMS03.Areas.Receive.Models;
 
 
 // see: appsettings.json for,
 // Connection String: CSPullItems
 // Db Name: PullItems02
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS03.Models
 {
     public class ApplicationDbContext : DbContext // ----------------------------------------------
     {

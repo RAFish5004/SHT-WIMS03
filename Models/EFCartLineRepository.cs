@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS03.Models
 {
     //public class EFCartLineRepository : ICartLineRepository // ------------------------------------
     //{

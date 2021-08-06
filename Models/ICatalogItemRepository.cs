@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS03.Models
 {
     public interface ICatalogItemRepository // ----------------------------------------------------
     {

@@ -11,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace SHTWIMS02.Infrastructure
+namespace SHTWIMS03.Infrastructure
 {
     public static class UrlExtensions // static reqd --------------------------------------------
     {

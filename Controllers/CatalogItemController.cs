@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using SHTWIMS02.Models;
+using SHTWIMS03.Models;
 
 
 
-namespace SHTWIMS02.Controllers
+namespace SHTWIMS03.Controllers
 {
     public class CatalogItemController : Controller // --------------------------------------------
     {     

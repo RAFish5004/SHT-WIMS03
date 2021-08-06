@@ -10,10 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SHTWIMS02.Areas.Pull.Models;
-using SHTWIMS02.Pull.Models;
+using SHTWIMS03.Areas.Pull.Models;
+using SHTWIMS03.Pull.Models;
 
-namespace SHTWIMS02.Areas.Pull.Models
+namespace SHTWIMS03.Areas.Pull.Models
 {
     public class PullDisplayViewModel // ----------------------------------------------------------
     {

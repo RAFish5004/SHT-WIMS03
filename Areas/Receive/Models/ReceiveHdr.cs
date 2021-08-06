@@ -8,13 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations; //required to use validation attributes
 using System.ComponentModel.DataAnnotations.Schema; // reqd for DatabaseGenerated attribute
-using SHTWIMS02.Models;
+using SHTWIMS03.Models;
 using System.Security.Policy;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 
 
-namespace SHTWIMS02.Areas.Receive.Models
+namespace SHTWIMS03.Areas.Receive.Models
 {
     public class ReceiveHdr // --------------------------------------------------------------------
     {

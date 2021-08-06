@@ -13,10 +13,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using SHTWIMS02.Models;
+using SHTWIMS03.Models;
 
 
-namespace SHTWIMS02.Areas.Locate.Models
+namespace SHTWIMS03.Areas.Locate.Models
 {
     public class CountySeedData // ----------------------------------------------------------------
     {

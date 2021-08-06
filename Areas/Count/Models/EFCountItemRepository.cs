@@ -8,10 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SHTWIMS02.Models;
-using SHTWIMS02.Areas.Count.Models;
+using SHTWIMS03.Models;
+using SHTWIMS03.Areas.Count.Models;
 
-namespace SHTWIMS02.Areas.Count.Models
+namespace SHTWIMS03.Areas.Count.Models
 {
     public class EFCountItemRepository : ICountItemRepository // ---------------------------------------------------------
     {

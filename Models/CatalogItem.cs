@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 //using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.ComponentModel.DataAnnotations;
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS03.Models
 {
     public class CatalogItem : ItemBase // --------------------------------------------------------
     {

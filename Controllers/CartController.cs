@@ -9,11 +9,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using SHTWIMS02.Models;
-using SHTWIMS02.Models.ViewModels;
-using SHTWIMS02.Components;
+using SHTWIMS03.Models;
+using SHTWIMS03.Models.ViewModels;
+using SHTWIMS03.Components;
 
-namespace Areas.SHTWIMS02.Controllers
+namespace Areas.SHTWIMS03.Controllers
 {
     public class CartController : Controller // ---------------------------------------------------
     {

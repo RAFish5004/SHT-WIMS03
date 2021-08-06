@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SHTWIMS02.Areas.Receive.Controllers
+namespace SHTWIMS03.Areas.Receive.Controllers
 {
     [Area("Receive")]
     public class ReceiveItemController : Controller // --------------------------------------------

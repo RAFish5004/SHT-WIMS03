@@ -10,10 +10,10 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using SHTWIMS02.Infrastructure;
+using SHTWIMS03.Infrastructure;
 using System;
 
-namespace SHTWIMS02.Models
+namespace SHTWIMS03.Models
 {
     public class SessionCart : Cart
     {

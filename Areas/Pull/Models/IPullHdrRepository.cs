@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SHTWIMS02.Areas.Pull.Controllers;
+using SHTWIMS03.Areas.Pull.Controllers;
 
-namespace SHTWIMS02.Areas.Pull.Models
+namespace SHTWIMS03.Areas.Pull.Models
 {
    public interface IPullHdrRepository // --------------------------------------------------------------
     {

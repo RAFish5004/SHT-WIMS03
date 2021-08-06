@@ -9,12 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SHTWIMS02.Models;
-using SHTWIMS02.Areas.Pull.Models;
-using SHTWIMS02.Pull.Models;
+using SHTWIMS03.Models;
+using SHTWIMS03.Areas.Pull.Models;
+using SHTWIMS03.Pull.Models;
 
 
-namespace SHTWIMS02.Areas.Pull.Controllers
+namespace SHTWIMS03.Areas.Pull.Controllers
 {
     [Area("Pull")]
     public class PullHdrController : Controller // ------------------------------------------------
