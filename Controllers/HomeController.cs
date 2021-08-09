@@ -1,5 +1,5 @@
 ﻿// ========================================================
-// SHT-WIMS02.HomeController, 210309
+// SHT-WIMS03.HomeController, 210309
 // Author: Russell Fisher
 // ========================================================
 
@@ -15,7 +15,7 @@ namespace SHTWIMS03.Controllers
     public class HomeController : Controller // ---------------------------------------------------
     {
         public IActionResult Index() // -----------------------------------------------------------
-        {
+        {min
             return View();
         } // eo Index action method --------------------------------------------------------------
 
