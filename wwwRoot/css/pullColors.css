@@ -23,6 +23,11 @@ body {
     background-color: rgb(200,250,200);
 }
 
+div.menuItem a {
+    border: 2px solid darkGreen;
+    background-color: rgb(200,250,200);
+}
+
 .menuItem:hover .hide {
     color: rgb(155,125,50);
 }

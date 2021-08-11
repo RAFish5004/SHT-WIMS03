@@ -15,7 +15,7 @@ namespace SHTWIMS03.Controllers
     public class HomeController : Controller // ---------------------------------------------------
     {
         public IActionResult Index() // -----------------------------------------------------------
-        {min
+        {
             return View();
         } // eo Index action method --------------------------------------------------------------
 

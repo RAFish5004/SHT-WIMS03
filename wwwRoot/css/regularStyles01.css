@@ -226,6 +226,17 @@ textarea {
 }
 
 /* buttons included in each menu item  */
+div.menuItem a {
+    display: inline-block;
+    float: right;   
+    margin-right: 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.3rem;
+}
+
 .menuItem > button {
     float: right;
     right: 0;
@@ -236,7 +247,6 @@ textarea {
 
 .menuItem:hover .menuHide {
     display: block;
-
     font-size: 1.5rem;
     
 }

@@ -22,15 +22,15 @@
     <h2>Main Pull Menu</h2>
 
     <div class="menuItem">
-        New Pull Order
-        <button asp-area="Pull" asp-controller="Cart" asp-action="Index"  >Go</button>
+        New Pull Order       
+        <!-- <button type="button" onclick="/Cart/Index" asp-controller="Cart" asp-action="Index">Go</button> -->
+        <a type="button" href="/Cart/Index">Go</a>
         <div class="menuHide">Request some supplies from Disaster Field Supply Center (DFSC) </div>
     </div>
 
-
     <div class="menuItem">
         Pull Order List
-        <button>Go</button>
+        <a type="button" href="#">Go</a>
 
         <div class="menuHide">See a list of recent Pull Orders from your location</div>
     </div>
@@ -38,14 +38,16 @@
 
     <div class="menuItem">
         Print Pull Item List
-        <button>Go</button>
+        <a type="button" href="#">Go</a>
+
         <div class="menuHide">Print a list of items for a single Pull Order</div>
     </div>
 
 
     <div class="menuItem">
         Catalog
-        <button>Go</button>
+        <a type="button" href="#">Go</a>
+
         <div class="menuHide">See a scroll list of catalog items</div>
     </div>
 

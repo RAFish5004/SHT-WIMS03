@@ -29,7 +29,7 @@ namespace Areas.SHTWIMS03.Controllers
         } // eo constructor -----------------------------------------------------------------------
 
 
-        public IActionResult Index() // -----------------------------------------------------------
+        public ViewResult Index() // -----------------------------------------------------------
         {
             // request filterString for select list
             return View();
