@@ -17,6 +17,9 @@ namespace SHTWIMS03.Models
 {
     public class SessionCart : Cart
     {
+        [JsonIgnore]
+        public ISession Session { get; set; }
+
         public static Cart GetCart(IServiceProvider services) // ----------------------------------
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
@@ -27,9 +30,7 @@ namespace SHTWIMS03.Models
 
         } // eo static GetCart method -------------------------------------------------------------
 
-        [JsonIgnore]
-        public ISession Session { get; set; }
-
+       
         // see Infrastructure/SessionExtensions.cs for base methods
         public override void AddLine(CartLine cartLine) // ----------------------------------------
         {

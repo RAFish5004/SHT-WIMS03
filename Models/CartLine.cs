@@ -46,7 +46,7 @@ namespace SHTWIMS03.Models
         } // eo default constructor ---------------------------------------------------------------
 
 
-        public CartLine(CatalogItem ci) // alt 1 constructor---------------------------------------
+        public CartLine(CatalogItem ci) // alt 1 constructor, new Cartline-------------------------
         {
             // upgrade a CatalogItem to a CartLine object
             this.ItemId = ci.ItemId;
@@ -57,7 +57,7 @@ namespace SHTWIMS03.Models
 
         }// eo constructor from CatalogItem--------------------------------------------------------
 
-        public CartLine(PullItem pi)  // alt 2 constructor-----------------------------------------
+        public CartLine(PullItem pi)  // alt 2 constructor, update PullItem -----------------------
         {
             // enable Description property
             var ciRepository = sp.GetService<ICatalogItemRepository>();            

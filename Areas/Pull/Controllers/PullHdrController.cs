@@ -74,6 +74,8 @@ namespace SHTWIMS03.Areas.Pull.Controllers
                     pull.PullItems.Add(new PullItem(line));
                 }
                 repository.SavePullHdr(pull);
+                // **TempData required to pass value to another action after Redirection
+                TempData["phid"] = pull.PullHdrId.ToString();
                 return RedirectToAction(nameof(CartCompleted));                
             }
             else
@@ -86,8 +88,9 @@ namespace SHTWIMS03.Areas.Pull.Controllers
 
         public ViewResult CartCompleted() // ----------------------------------------------------------
         {
+            string pullId = TempData["phid"] as string;
             cart.Clear();
-            return View();
+            return View("CartCompleted",(string)pullId);
         } // eo Completed action method -----------------------------------------------------------
 
         public ViewResult PullHdrList() // --------------------------------------------------------

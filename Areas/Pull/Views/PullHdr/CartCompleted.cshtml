@@ -1,7 +1,10 @@
 ﻿@*
-- CartCompleted.cshtml, 210416
+    - CartCompleted.cshtml, 210416
 *@
+@model string
 @{
 }
 <h2>Your Pull Order is Completed</h2>
-<h3>Pull Header ID =  </h3>
+<h3>Pull Id: @Model</h3>
+<a class="btn btn-primary" asp-area="" asp-controller="Cart" asp-action="Index">New Pull</a>
+<a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Index" >Home Page</a>
