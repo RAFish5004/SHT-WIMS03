@@ -35,7 +35,7 @@ namespace SHTWIMS03.Areas.Receive.Models
         // inherited from CountBase
         // string ItemId (15 char)
         // string UoM
-        // int Qty is used for QtyReceived
+        // int QtyReq is used for QtyReceived
         // string Comment        
 
 

@@ -59,7 +59,7 @@ namespace SHTWIMS03.Migrations
                     b.Property<string>("ItemId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Qty")
+                    b.Property<int>("QtyReq")
                         .HasColumnType("int");
 
                     b.Property<string>("UoM")
@@ -188,7 +188,7 @@ namespace SHTWIMS03.Migrations
                     b.Property<int>("PullHdrId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Qty")
+                    b.Property<int>("QtyReq")
                         .HasColumnType("int");
 
                     b.Property<string>("UoM")
@@ -259,7 +259,7 @@ namespace SHTWIMS03.Migrations
                     b.Property<int>("PullHdrId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Qty")
+                    b.Property<int>("QtyReq")
                         .HasColumnType("int");
 
                     b.Property<int>("QtyRequested")
@@ -321,7 +321,7 @@ namespace SHTWIMS03.Migrations
                     b.Property<string>("ItemId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Qty")
+                    b.Property<int>("QtyReq")
                         .HasColumnType("int");
 
                     b.Property<int>("ReceiveHdrId")

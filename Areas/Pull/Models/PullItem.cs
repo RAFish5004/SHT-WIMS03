@@ -28,7 +28,7 @@ namespace SHTWIMS03.Areas.Pull.Models
         public PullItem() : base() // -------------------------------------------------------------
         {
             // base class also needs a default, zero parameter constructor
-            // this constructor empty for now
+            this.QtyShipped = -1; // set a default value (-1)indicating shipped = requested
 
         } // eo constructor -----------------------------------------------------------------------       
 
@@ -39,7 +39,7 @@ namespace SHTWIMS03.Areas.Pull.Models
             // PullHdrId set by db
             this.ItemId = cl.ItemId;
             this.UoM = cl.UoM;
-            this.QtyRequested = (int)cl.Qty;
+            this.QtyRequested = (int)cl.QtyReq;
             this.Comment = cl.Comment;
             this.DateNeeded = cl.DateNeeded;
 
@@ -64,7 +64,7 @@ namespace SHTWIMS03.Areas.Pull.Models
         // inherited from CountBase
         // string ItemId (15 char)
         // string UoM
-        // int Qty is used for QtyShipped
+        // int QtyReq is used for QtyShipped
         // string Comment        
 
         // Navigation property, this is required as link to header type

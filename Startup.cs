@@ -5,6 +5,7 @@
 // ========================================================
 
 // path: C:\OneDriveLocal\OneDrive\ASPMVC\ARCWeb\SHT-WIMS02
+// db: server= RUSS\\SQLEXPRESS01, database=WIMS02
 
 using System;
 using System.Collections.Generic;

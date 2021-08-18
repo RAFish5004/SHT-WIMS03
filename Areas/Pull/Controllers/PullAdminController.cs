@@ -2,6 +2,7 @@
 // PullAdminController.cs, 210504
 // Author: Russell Fisher
 // - enable editing of PullHdr order objects
+// HttpRequest class: https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.httprequest?view=aspnetcore-5.0
 // ==================================================
 
 using Microsoft.AspNetCore.Mvc;
@@ -27,12 +28,12 @@ namespace SHTWIMS03.Areas.Pull.Controllers
         private Cart cart;
         private PullHdrListViewModel phlvm;
 
-        public Dictionary<string, string> CIKVP
+        public Dictionary<string, string> CIKVP // ------------
         {
             //set { cikvp = value; }  
             get { return cikvp; }
 
-        }
+        } // eo CIKVP dictionary property ----------------------
 
         public PullAdminController(IPullHdrRepository pulls, ICatalogItemRepository ci,  IPullItemRepository pi) // -----------------------------------------------------------
         {
@@ -58,19 +59,39 @@ namespace SHTWIMS03.Areas.Pull.Controllers
 
         } // eo PullEdit action method // ---------------------------------------------------------
 
-        [HttpPost]    
+        //[HttpPost]  * preserve a working version  
+        //public ViewResult PullDisplay(int pullHdrId) // ----------------------------------------------
+        //{
+        //    // created a PullDisplayViewModel to send in a PullHdr and CIKVP dictionary
+        //    // https://docs.microsoft.com/en-us/dotnet/api/system.web.httprequest.form?view=netframework-4.8
+
+        //    PullHdr localPull = pullRepo.PullHdrs.FirstOrDefault(p => p.PullHdrId == pullHdrId);
+        //    //var req = Request.Form["PullHdrId"];
+
+        //    var ssn = Request.HttpContext.Session.Id;
+
+        //    PullDisplayViewModel PDVM = new PullDisplayViewModel(localPull, CIKVP); 
+        //    return View(PDVM); 
+
+        //} //  eo PullDisplay action method -----------------------------------------------------------
+
+        [HttpPost]
         public ViewResult PullDisplay(int pullHdrId) // ----------------------------------------------
-        {   
+        {
             // created a PullDisplayViewModel to send in a PullHdr and CIKVP dictionary
+            // https://docs.microsoft.com/en-us/dotnet/api/system.web.httprequest.form?view=netframework-4.8
 
             PullHdr localPull = pullRepo.PullHdrs.FirstOrDefault(p => p.PullHdrId == pullHdrId);
-            var req = Request.Form["PullHdrId"];
-            var status = Request.Form["Status"];
-            PullDisplayViewModel PDVM = new PullDisplayViewModel(localPull, CIKVP); 
-            return View(PDVM); 
+            //var req = Request.Form["PullHdrId"];
+
+            var ssn = Request.HttpContext.Session.Id;
+
+            PullDisplayViewModel PDVM = new PullDisplayViewModel(localPull, CIKVP);
+            return View(PDVM);
 
 
         } //  eo PullDisplay action method -----------------------------------------------------------
+
 
         [HttpGet]
         public ViewResult PullItemDisplay(int pullItemId) // --------------------------------------
@@ -87,7 +108,9 @@ namespace SHTWIMS03.Areas.Pull.Controllers
         [HttpPost]
         public IActionResult PullHdrChanged(PullHdr phdr) // ------------------------------------
         {
-          
+            var stat = Request.Form["phdr.Status"];
+            var ssn = Request.HttpContext.Session.Id;
+            
             if(phdr!=null) 
             { 
                 // SavePullHdr method is member of EFPullHdrRepository.cs

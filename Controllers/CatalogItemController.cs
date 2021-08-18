@@ -14,20 +14,7 @@ namespace SHTWIMS03.Controllers
     public class CatalogItemController : Controller // --------------------------------------------
     {     
         private ICatalogItemRepository repository;
-        private List<string> catalogCategories;
-     
-        
-        
-        // properties
-        public List<string> CatalogCategories {
-
-            get{
-                return catalogCategories;
-            }
-        } // eo property -------------------------
-        
-       
-
+            
 
         // Constructor, one parameter
         public CatalogItemController(ICatalogItemRepository repo) // ------------------------------

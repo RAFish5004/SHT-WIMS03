@@ -74,7 +74,7 @@ namespace SHTWIMS03.Areas.Pull.Controllers
                     pull.PullItems.Add(new PullItem(line));
                 }
                 repository.SavePullHdr(pull);
-                // **TempData required to pass value to another action after Redirection
+                // **TempData required to pass value to another action after Redirection, p 541
                 TempData["phid"] = pull.PullHdrId.ToString();
                 return RedirectToAction(nameof(CartCompleted));                
             }

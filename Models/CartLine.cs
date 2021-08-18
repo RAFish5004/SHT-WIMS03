@@ -31,12 +31,19 @@ namespace SHTWIMS03.Models
         public int PullHdrId { get; set; }       
         public string ItemId { get; set; }
         public string Description { get; set; }
-        public string UoM { get; set; }        
+        public string UoM { get; set; } 
+        
         [Required]
         [Range(minimum: 1, maximum: 5000, ErrorMessage = "Please enter a quantity of one or more")]
-        public int Qty { get; set; }
+        public int QtyReq { get; set; }
+        
+        [Range(minimum: -1, maximum:5000)]
+        public int QtyShp { get; set; }
+        
         [Required(ErrorMessage = "Please enter a valid date mm/dd/yy")]
+        
         public DateTime DateNeeded { get; set; }
+        
         public string Comment { get; set; }
         
         public CartLine() // default constructor --------------------------------------------------
@@ -52,7 +59,7 @@ namespace SHTWIMS03.Models
             this.ItemId = ci.ItemId;
             this.Description = ci.Description;
             this.UoM = ci.UoM;
-            this.Qty = 1;
+            this.QtyReq = 1;
             this.DateNeeded = DateTime.Today;
 
         }// eo constructor from CatalogItem--------------------------------------------------------
@@ -66,7 +73,7 @@ namespace SHTWIMS03.Models
             this.ItemId = pi.ItemId;
             this.Description = ciRepository.CatalogItems.FirstOrDefault(ci => ci.ItemId == pi.ItemId).Description;
             this.UoM = pi.UoM;
-            this.Qty = pi.QtyRequested;
+            this.QtyReq = pi.QtyRequested;
             this.DateNeeded = pi.DateNeeded;
             this.Comment = pi.Comment;
 

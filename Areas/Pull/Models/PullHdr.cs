@@ -68,6 +68,7 @@ namespace SHTWIMS03.Areas.Pull.Models
 
         public string Comment { get; set; }
 
+        //public string AttachmentUrl { get; set; }
         public virtual ICollection<PullItem> PullItems { get; set; }
 
     } //eo PullHdr class --------------------------------------------------------------------------
